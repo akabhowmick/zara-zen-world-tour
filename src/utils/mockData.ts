@@ -26,14 +26,14 @@ export const mockCharacters: Character[] = [
     id: 1,
     name: "Zara",
     description: "A small, fluffy Pomeranian with a lightened golden-orange coat and soft cream accents. She has large, expressive eyes and a cheerful, curious personality. Zara wears a purple cable-knit sweater and travels across Asia with Zen.",
-    image: "../assets/Character_images/zara_main.png", // replace with actual image path
+    image: "src/assets/zara_main.png", 
     traits: ["Cheerful", "Curious", "Petite", "Fluffy", "Loves Sushi"]
   },
   {
     id: 2,
     name: "Zen",
     description: "A small golden mixed-breed dog with a slightly lighter coat than Zara. He has a longer face, floppy ears, and a sweet, playful puppy-like expression. Zen wears a light blue cable-knit sweater and enjoys exploring new places.",
-    image: "../assets/Character_images/zen_main.png", // replace with actual image path
+    image: "src/assets/zen_main.png", 
     traits: ["Playful", "Sweet", "Inquisitive", "Floppy-eared", "Foodie"]
   },
 ];
