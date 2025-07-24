@@ -24,25 +24,18 @@ export const mockChapters: Chapter[] = [
 export const mockCharacters: Character[] = [
   {
     id: 1,
-    name: "Sarah Mitchell",
-    description: "A young woman who discovers her family's hidden past through her grandmother's journal.",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
-    traits: ["Curious", "Brave", "Determined", "Thoughtful"]
+    name: "Zara",
+    description: "A small, fluffy Pomeranian with a lightened golden-orange coat and soft cream accents. She has large, expressive eyes and a cheerful, curious personality. Zara wears a purple cable-knit sweater and travels across Asia with Zen.",
+    image: "../assets/Character_images/zara_main.png", // replace with actual image path
+    traits: ["Cheerful", "Curious", "Petite", "Fluffy", "Loves Sushi"]
   },
   {
     id: 2,
-    name: "Eleanor Mitchell",
-    description: "Sarah's grandmother, keeper of family secrets and the original journal writer.",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop&crop=face",
-    traits: ["Wise", "Mysterious", "Protective", "Strong-willed"]
+    name: "Zen",
+    description: "A small golden mixed-breed dog with a slightly lighter coat than Zara. He has a longer face, floppy ears, and a sweet, playful puppy-like expression. Zen wears a light blue cable-knit sweater and enjoys exploring new places.",
+    image: "../assets/Character_images/zen_main.png", // replace with actual image path
+    traits: ["Playful", "Sweet", "Inquisitive", "Floppy-eared", "Foodie"]
   },
-  {
-    id: 3,
-    name: "Marcus Thompson",
-    description: "A local historian who becomes Sarah's ally in uncovering the truth.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-    traits: ["Knowledgeable", "Helpful", "Analytical", "Trustworthy"]
-  }
 ];
 
 export const mockTrivia: TriviaQuestion[] = [
