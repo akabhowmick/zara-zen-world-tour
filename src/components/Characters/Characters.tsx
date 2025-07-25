@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Character } from "../../types/book-types";
-import { mockCharacters } from "../../utils/mockData";
+import { mockCharacters } from "../../utils/characters";
 
 export const CharactersView = () => {
   const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null);

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { mockTrivia } from "../../utils/mockData";
+import { mockTrivia } from "../../utils/triviaQuestions";
 import { Star } from "lucide-react";
 
 export const TriviaView = () => {

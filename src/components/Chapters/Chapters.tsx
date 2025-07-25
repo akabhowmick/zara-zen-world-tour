@@ -1,7 +1,7 @@
 import { ChevronRight } from "lucide-react";
 import { useState } from "react";
 import type { Chapter } from "../../types/book-types";
-import { mockChapters } from "../../utils/mockData";
+import { mockChapters } from "../../utils/chapters";
 
 export const ChaptersView = () => {
   const [selectedChapter, setSelectedChapter] = useState<Chapter | null>(null);
