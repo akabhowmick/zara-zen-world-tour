@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { Chapter } from "../../types/book-types";
 import { chapters } from "../../utils/chapters";
 import { ChapterCard } from "./ChapterCard";
+// import { Sidebar } from "lucide-react";
 // import { MapPin } from "lucide-react";
 
 export const ChaptersView = () => {
@@ -26,20 +27,8 @@ export const ChaptersView = () => {
 
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 mt-10">
-        {/* Floating Progress Sidebar
-        {!selectedChapter && (
-          <div className="hidden lg:block absolute left-0 top-10 bg-white/80 p-4 rounded-xl shadow-lg backdrop-blur-md">
-            <h3 className="font-bold mb-2">🌐 Progress</h3>
-            <ul className="space-y-1 text-sm">
-              {chapters.map((ch) => (
-                <li key={ch.id} className="flex items-center space-x-1">
-                  <MapPin className="h-4 w-4 text-blue-500" />
-                  <span>{ch.title}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )} */}
+        {/* Floating Progress Sidebar */}
+        {/* {!selectedChapter && <Sidebar />} */}
 
         {selectedChapter ? (
           <div className="bg-white rounded-lg shadow-lg p-8">
