@@ -52,7 +52,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeTab, setActiveTab 
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
             <Book className="h-8 w-8 text-blue-400" />
-            <span className="font-bold text-xl">The Mystery Chronicles</span>
+            <span className="font-bold text-xl">Zara and Zen's World Tour!</span>
           </div>
 
           {/* Desktop Navigation */}
