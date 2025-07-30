@@ -3,6 +3,10 @@ export interface Chapter {
   title: string;
   content: string;
   publishedAt: string;
+  image: string;
+  images?: string[];
+  pages?: string[];
+  countryCode?: string;
 }
 
 export interface Character {
