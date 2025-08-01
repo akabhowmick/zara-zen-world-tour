@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { Chapter } from "../../types/book-types";
 import { chapters } from "../../utils/chapters";
 import { ChapterCard } from "./ChapterCard";
+import { ChapterPage } from "./ChapterPage";
 // import { Sidebar } from "lucide-react";
 // import { MapPin } from "lucide-react";
 
@@ -31,19 +32,7 @@ export const ChaptersView = () => {
         {/* {!selectedChapter && <Sidebar />} */}
 
         {selectedChapter ? (
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <button
-              onClick={() => setSelectedChapter(null)}
-              className="mb-6 text-blue-600 hover:text-blue-800 font-medium"
-            >
-              ← Back to Chapters
-            </button>
-            <h1 className="text-3xl font-bold mb-4">{selectedChapter.title}</h1>
-            <p className="text-gray-600 mb-6">Published: {selectedChapter.publishedAt}</p>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-gray-800 leading-relaxed">{selectedChapter.content}</p>
-            </div>
-          </div>
+          <ChapterPage selectedChapter={selectedChapter} setSelectedChapter={setSelectedChapter} />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 animate-fade-in">
             {chapters.map((chapter: Chapter) => (
