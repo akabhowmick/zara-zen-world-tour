@@ -1,5 +1,6 @@
 import type { Chapter } from "../types/book-types";
 import chapterImage from "../assets/Character_Images/zara_main.png";
+import { japanChapter } from "./Chapters_Info/Chapter_01_Japan";
 
 export const chapters: Chapter[] = [
   // {
@@ -9,13 +10,7 @@ export const chapters: Chapter[] = [
   //   publishedAt: "2025-07-01",
   //   image: chapterImage,
   // },
-  {
-    id: 2,
-    title: "Chapter 1: Blossoms of Japan",
-    content: `Zara and Zen’s first stop was Japan, just in time for cherry blossom season. They strolled through Kyoto’s historic streets, marveled at the golden Kinkaku-ji temple, and shared sweet mochi under blooming sakura trees. They dressed in tiny dog-sized kimonos and bowed politely to locals, eager to learn every bit of the culture. One highlight? Watching real sumo wrestlers train—Zen even tried to mimic them, much to Zara's amusement.`,
-    publishedAt: "2025-07-03",
-    image: chapterImage,
-  },
+  japanChapter,
   {
     id: 3,
     title: "Chapter 2: Mysteries Along the Great Wall",
