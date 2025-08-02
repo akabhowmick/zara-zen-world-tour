@@ -1,4 +1,3 @@
-// File: ChapterPage.tsx
 import { useState } from "react";
 import type { Chapter } from "../../types/book-types";
 import { SingleBookPage } from "./SingleBookPage";
@@ -45,7 +44,7 @@ export const ChapterPage = ({
       <div className="relative h-full min-h-[420px]">
         <div
           key={pageNumber} // ensures new render for animation
-          className={`absolute inset-0 transition-all duration-600 ease-in-out transform ${
+          className={`inset-0 transition-all duration-600 ease-in-out transform ${
             isAnimating ? (direction === 'next' ? 'animate-slide-left' : 'animate-slide-right') : ''
           }`}
         >
@@ -56,7 +55,6 @@ export const ChapterPage = ({
         </div>
       </div>
 
-      {/* Pagination Controls */}
       <div className="mt-10 flex items-center justify-between">
         <button
           onClick={() => goToPage('prev')}
@@ -76,7 +74,6 @@ export const ChapterPage = ({
           Next →
         </button>
       </div>
-
     </div>
   );
 };

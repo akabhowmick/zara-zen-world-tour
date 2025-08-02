@@ -45,3 +45,16 @@
     transform: translateX(0%) rotateY(0deg);
   }
 }
+
+.page-flip-book {
+  width: 100%;
+  max-width: 1000px;
+  height: 500px;
+}
+
+.page {
+  font-family: 'Georgia', serif;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  overflow: hidden;
+}
