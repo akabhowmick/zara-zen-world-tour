@@ -1,12 +1,47 @@
 @import "tailwindcss";
 
 @keyframes floatCloud {
-  0% { transform: translateX(-200px); opacity: 0; }
-  50% { opacity: 1; }
-  100% { transform: translateX(100vw); opacity: 0; }
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
 }
 .cloud {
   animation: floatCloud 60s linear infinite;
   position: absolute;
   top: 10%;
+}
+
+.animate-slide-left {
+  animation: slideLeft 0.6s forwards;
+}
+.animate-slide-right {
+  animation: slideRight 0.6s forwards;
+}
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100%) rotateY(-5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%) rotateY(0deg);
+  }
+}
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) rotateY(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%) rotateY(0deg);
+  }
 }
