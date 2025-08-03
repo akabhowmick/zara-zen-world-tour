@@ -8,7 +8,7 @@ export const TriviaMenu = ({ onSelect }: { onSelect: (c: string) => void }) => (
         onClick={() => onSelect(name)}
         className="bg-blue-100 text-blue-800 py-3 px-4 rounded-lg shadow hover:bg-blue-200 font-semibold capitalize"
       >
-        <span className="text-2xl mr-2">{flag}</span>
+        <img src={flag} />
         <span className="capitalize">{name}</span>
       </button>
     ))}

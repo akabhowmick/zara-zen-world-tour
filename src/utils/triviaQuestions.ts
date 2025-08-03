@@ -3,7 +3,7 @@ import type { TriviaQuestion } from "../types/book-types";
 export const countries = [
   {
     name: "India",
-    flag: "🇮🇳",
+    flag: "https://flagcdn.com/w40/in.png",
   },
   {
     name: "China",
