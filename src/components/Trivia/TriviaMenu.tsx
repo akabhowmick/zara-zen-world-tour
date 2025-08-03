@@ -2,13 +2,14 @@ import { countries } from "../../utils/triviaQuestions";
 
 export const TriviaMenu = ({ onSelect }: { onSelect: (c: string) => void }) => (
   <div className="grid grid-cols-2 gap-4 max-w-md mx-auto mt-8">
-    {countries.map((country) => (
+    {countries.map(({ name, flag }) => (
       <button
-        key={country}
-        onClick={() => onSelect(country)}
+        key={name}
+        onClick={() => onSelect(name)}
         className="bg-blue-100 text-blue-800 py-3 px-4 rounded-lg shadow hover:bg-blue-200 font-semibold capitalize"
       >
-        {country.replace(/([A-Z])/g, " $1")}
+        <span className="text-2xl mr-2">{flag}</span>
+        <span className="capitalize">{name}</span>
       </button>
     ))}
   </div>
