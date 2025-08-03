@@ -1,10 +1,11 @@
-import { Book, Users, Trophy, X, Menu } from "lucide-react";
+import { Book, Users, Trophy, X, Menu, PencilLine } from "lucide-react";
 import { useState } from "react";
 
 const tabs = [
   { key: "chapters", label: "Chapters", icon: Book },
   { key: "characters", label: "Characters", icon: Users },
   { key: "trivia", label: "Trivia", icon: Trophy },
+  { key: "blog", label: "Blogs", icon: PencilLine}
 ] as const;
 
 type TabKey = typeof tabs[number]["key"];
