@@ -2,6 +2,7 @@ import { useState } from "react";
 import { mockTrivia, type Country } from "../../utils/triviaQuestions";
 import { Star } from "lucide-react";
 import { TriviaMenu } from "./TriviaMenu";
+import { AnimatedLanding } from "../Animated/AnimatedLanding";
 
 export const TriviaView = () => {
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
@@ -44,7 +45,11 @@ export const TriviaView = () => {
   };
 
   if (!selectedCountry) {
-    return <TriviaMenu onClick={startCountryTrivia} />;
+    return (
+      <AnimatedLanding title="Select a Country">
+        <TriviaMenu onClick={startCountryTrivia} />
+      </AnimatedLanding>
+    );
   }
 
   const trivia = mockTrivia[selectedCountry];
