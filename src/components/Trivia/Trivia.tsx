@@ -1,10 +1,7 @@
-// File: TriviaView.tsx
 import { useState } from "react";
-import { mockTrivia } from "../../utils/triviaQuestions";
+import { mockTrivia, type Country } from "../../utils/triviaQuestions";
 import { Star } from "lucide-react";
-
-const countries = ["india", "china", "japan", "southKorea", "thailand", "singapore"] as const;
-type Country = typeof countries[number];
+import { TriviaMenu } from "./TriviaMenu";
 
 export const TriviaView = () => {
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
@@ -47,22 +44,7 @@ export const TriviaView = () => {
   };
 
   if (!selectedCountry) {
-    return (
-      <div className="max-w-3xl mx-auto text-center py-12">
-        <h1 className="text-4xl font-bold mb-6">Select a Country</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {countries.map((country) => (
-            <button
-              key={country}
-              onClick={() => startCountryTrivia(country)}
-              className="bg-blue-100 text-blue-800 py-3 px-6 rounded-lg shadow hover:bg-blue-200 font-semibold capitalize"
-            >
-              {country.replace(/([A-Z])/g, " $1")}
-            </button>
-          ))}
-        </div>
-      </div>
-    );
+    return <TriviaMenu onClick={startCountryTrivia} />;
   }
 
   const trivia = mockTrivia[selectedCountry];
