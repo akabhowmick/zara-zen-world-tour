@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { Navigation } from "./components/Navigation/Navigation";
-import { TriviaView } from "./components/Trivia/Trivia";
+import { TriviaView } from "./components/Trivia/TriviaView";
 import { CharactersView } from "./components/Characters/Characters";
 import { ChaptersView } from "./components/Chapters/ChapterView";
+import { BlogView } from "./components/Blog/BlogView";
 
 const BookWebsite: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<"chapters" | "characters" | "trivia">("chapters");
+  const [activeTab, setActiveTab] = useState<"chapters" | "characters" | "trivia" | "blog">(
+    "chapters"
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-100 via-pink-100 to-blue-100 pb-16">
@@ -14,6 +17,7 @@ const BookWebsite: React.FC = () => {
         {activeTab === "chapters" && <ChaptersView />}
         {activeTab === "characters" && <CharactersView />}
         {activeTab === "trivia" && <TriviaView />}
+        {activeTab === "blog" && <BlogView />}
       </main>
     </div>
   );

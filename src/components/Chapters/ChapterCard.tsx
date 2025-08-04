@@ -18,7 +18,7 @@ export const ChapterCard = ({
           <img
             src={chapter.image}
             alt={chapter.title}
-            className="w-full h-40 object-cover rounded-md mb-4"
+            className="w-full h-80 object-cover rounded-md mb-4"
           />
         )}
         {chapter.countryCode && (

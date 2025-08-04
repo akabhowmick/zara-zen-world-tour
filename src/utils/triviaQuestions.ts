@@ -19,7 +19,7 @@ export const countriesWithFlags = [
   { name: "Singapore", flag: "https://flagcdn.com/w40/sg.png" },
 ];
 
-export const indiaQuestions: TriviaQuestion[] = [
+const indiaQuestions: TriviaQuestion[] = [
   {
     id: 1,
     question: "What is the capital city of India?",
@@ -93,7 +93,7 @@ export const indiaQuestions: TriviaQuestion[] = [
   },
 ];
 
-export const chinaQuestions: TriviaQuestion[] = [
+const chinaQuestions: TriviaQuestion[] = [
   {
     id: 1,
     question: "What is the capital city of China?",
@@ -173,7 +173,7 @@ export const chinaQuestions: TriviaQuestion[] = [
   },
 ];
 
-export const japanQuestions: TriviaQuestion[] = [
+const japanQuestions: TriviaQuestion[] = [
   {
     id: 1,
     question: "What is the capital city of Japan?",
@@ -246,7 +246,7 @@ export const japanQuestions: TriviaQuestion[] = [
   },
 ];
 
-export const thailandQuestions: TriviaQuestion[] = [
+const thailandQuestions: TriviaQuestion[] = [
   {
     id: 1,
     question: "What is the capital city of Thailand?",
@@ -319,7 +319,7 @@ export const thailandQuestions: TriviaQuestion[] = [
   },
 ];
 
-export const southKoreaQuestions: TriviaQuestion[] = [
+const southKoreaQuestions: TriviaQuestion[] = [
   {
     id: 1,
     question: "What is the capital city of South Korea?",

@@ -1,6 +1,7 @@
 import type { Chapter } from "../types/book-types";
 import chapterImage from "../assets/Character_Images/zara_main.png";
 import { japanChapter } from "./Chapters_Info/Chapter_01_Japan";
+import { chinaChapter } from "./Chapters_Info/Chapter_03_China";
 
 export const chapters: Chapter[] = [
   // {
@@ -11,13 +12,7 @@ export const chapters: Chapter[] = [
   //   image: chapterImage,
   // },
   japanChapter,
-  {
-    id: 3,
-    title: "Chapter 2: Mysteries Along the Great Wall",
-    content: `In China, the duo hiked the breathtaking Great Wall at dusk. With bamboo hats and glowing red lanterns, they explored winding stone paths while laughing and chasing the wind. Zara packed a picnic of colorful dim sum, and they sat gazing out over ancient mountain ridges. Along the way, they uncovered a hidden scroll that hinted at an ancient dog hero’s legend, setting them on a new mission.`,
-    publishedAt: "2025-07-05",
-    image: chapterImage,
-  },
+  chinaChapter, 
   {
     id: 4,
     title: "Chapter 3: Lanterns of Thailand",
