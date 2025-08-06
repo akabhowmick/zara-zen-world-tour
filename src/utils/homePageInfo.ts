@@ -1,38 +1,32 @@
-export const writingActivities = [
+import { Book, Users, Trophy, PencilLine } from "lucide-react";
+
+export const tabs = [
   {
-    title: "My Doggy Book",
-    description: "Create your own illustrated dog storybook from scratch!",
-    to: "/write/book",
-    cta: "Start Writing"
+    key: "/chapters",
+    label: "Chapters",
+    icon: Book,
+    description:
+      "Follow Zara & Zen across real-world locations with heartwarming tales and cultural fun.",
   },
   {
-    title: "Paw-etry",
-    description: "Craft your own fun and fluffy poems about anything dog-related.",
-    to: "/write/poem",
-    cta: "Write a Poem"
+    key: "/characters",
+    label: "Characters",
+    icon: Users,
+    description:
+      "Meet Zara, Zen, and their fluffy friends. Learn their stories and what makes them special!",
   },
   {
-    title: "The Bark Gazette",
-    description: "Report breaking news from the pup park in a fun article format.",
-    to: "/write/news",
-    cta: "Write an Article"
+    key: "/trivia",
+    label: "Trivia",
+    icon: Trophy,
+    description:
+      "Play themed trivia games for each country they visit. Can you fetch a perfect score?",
   },
   {
-    title: "Mystery Whiffs",
-    description: "Start a mystery story that only a super-sniffing pup can solve!",
-    to: "/write/mystery",
-    cta: "Create Mystery"
+    key: "/blog",
+    label: "Blogs",
+    icon: PencilLine,
+    description:
+      "Peek behind the scenes with author notes, fun extras, and tail-wagging community posts.",
   },
-  {
-    title: "Love at First Bark",
-    description: "Tell a tail-wagging romantic story of two star-crossed pups.",
-    to: "/write/romance",
-    cta: "Start a Romance"
-  },
-  {
-    title: "Oops! I'm Late!",
-    description: "Write a silly story about a pup who's always running behind!",
-    to: "/write/comedy",
-    cta: "Write Funny Story"
-  }
 ];

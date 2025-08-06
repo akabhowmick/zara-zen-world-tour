@@ -4,3 +4,6 @@ moving clouds
 <img src="../../assets/Home/cloud.png" className="cloud w-48 opacity-50" style={{ top: "40%", animationDelay: "10s" }} />
 
 
+
+
+find a color pallette

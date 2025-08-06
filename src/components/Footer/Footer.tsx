@@ -2,7 +2,7 @@ import { PawPrint, Mail, CheckCircle } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-orange-200 text-black py-10 px-6">
+    <footer className="bg-gradient-to-br from-red-100 via-pink-100 to-blue-100 text-black py-10 px-6">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-start">
         {/* Left: Fun copy */}
         <div className="space-y-4 text-lg">
@@ -12,8 +12,8 @@ export const Footer = () => {
           <p>🐶 Want the latest tail-wagging updates from Zara & Zen?</p>
           <p>🐾 Be the first to sniff out new stories, games, and doggone awesome adventures!</p>
           <p>
-            ✨ It’s easier than catching a tennis ball — just fill in your email and fetch your
-            spot in the newsletter!
+            ✨ It’s easier than catching a tennis ball — just fill in your email and fetch your spot
+            in the newsletter!
           </p>
         </div>
 
@@ -33,15 +33,12 @@ export const Footer = () => {
           <div className="flex items-center gap-2">
             <input type="checkbox" id="consent" className="accent-orange-500 bg-white" />
             <label htmlFor="consent" className="text-sm">
-              <CheckCircle className="inline-block w-4 h-4 mr-1" />
-              I give paw-mission to receive pawsome emails.
+              <CheckCircle className="inline-block w-4 h-4 mr-1" />I give paw-mission to receive
+              pawsome emails.
             </label>
           </div>
 
-          
-          <button
-            className="mt-2 bg-orange-300 hover:bg-orange-400 text-blue-700 font-bold py-2 px-6 rounded-full shadow inline-flex items-center gap-2"
-          >
+          <button className="mt-2 bg-orange-300 hover:bg-orange-400 text-blue-700 font-bold py-2 px-6 rounded-full shadow inline-flex items-center gap-2">
             CONTINUE <span className="text-xl">➡️</span>
           </button>
         </form>
