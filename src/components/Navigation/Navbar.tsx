@@ -1,8 +1,9 @@
-import { Book, Users, Trophy, PencilLine, X, Menu } from "lucide-react";
+import { Book, Users, Trophy, PencilLine, X, Menu, HomeIcon } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const tabs = [
+  { key: "home", label: "Home", icon: HomeIcon },
   { key: "/chapters", label: "Chapters", icon: Book },
   { key: "/characters", label: "Characters", icon: Users },
   { key: "/trivia", label: "Trivia", icon: Trophy },
