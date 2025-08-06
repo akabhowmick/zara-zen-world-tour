@@ -14,7 +14,7 @@ export const BlogView = () => {
 
       <section className="py-12 px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {writingActivities.map(({ title, description, to, cta }) => (
-          <div key={to} className="bg-yellow-200 rounded-lg p-4 shadow text-center">
+          <div key={to} className="bg-white rounded-lg p-4 shadow text-center">
             <h3 className="font-bold text-xl mb-2">{title}</h3>
             <p className="text-gray-700 mb-4">{description}</p>
             <Link

@@ -12,16 +12,16 @@ export const HomePage = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-yellow-100 via-pink-100 to-blue-100 min-h-screen">
+    <div className=" min-h-screen">
       {/* Hero Section */}
       <section className="text-center py-8 px-4">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl font-extrabold text-orange-700">Zara & Zen's World Tour!</h1>
+          <h1 className="text-3xl md:text-5xl font-extrabold text-black">Zara & Zen's World Tour!</h1>
           <Player
             autoplay
             loop
             src={globeAnimation}
-            style={{ height: "600px", width: "600px", margin: "0 auto" }}
+            style={{ height: "24rem", width: "24rem", margin: "0 auto", maxWidth: "100%", maxHeight: "100%" }}
           />
           <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-6">
             Follow two pups around the globe in stories, games, and fun-filled facts!

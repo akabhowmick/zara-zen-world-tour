@@ -2,7 +2,7 @@ import { PawPrint, Mail, CheckCircle } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-red-100 via-pink-100 to-blue-100 text-black py-10 px-6">
+    <footer className="text-black py-10 px-6">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-start">
         {/* Left: Fun copy */}
         <div className="space-y-4 text-lg">
@@ -38,7 +38,7 @@ export const Footer = () => {
             </label>
           </div>
 
-          <button className="mt-2 bg-orange-300 hover:bg-orange-400 text-blue-700 font-bold py-2 px-6 rounded-full shadow inline-flex items-center gap-2">
+          <button className="mt-2 bg-blue-300 hover:bg-blue-400 text-black font-bold py-2 px-6 rounded-full shadow inline-flex items-center gap-2">
             CONTINUE <span className="text-xl">➡️</span>
           </button>
         </form>
