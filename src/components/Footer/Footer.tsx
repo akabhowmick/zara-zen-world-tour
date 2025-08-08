@@ -38,7 +38,7 @@ export const Footer = () => {
             </label>
           </div>
 
-          <button className="mt-2 bg-blue-300 hover:bg-blue-400 text-black font-bold py-2 px-6 rounded-full shadow inline-flex items-center gap-2">
+          <button className="mt-2 bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-6 rounded-full shadow inline-flex items-center gap-2">
             CONTINUE <span className="text-xl">➡️</span>
           </button>
         </form>
