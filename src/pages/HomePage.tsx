@@ -44,7 +44,7 @@ export const HomePage = () => {
           <Link
             key={key}
             to={key}
-            className="bg-white hover:bg-yellow-100 transition-shadow shadow-lg rounded-xl p-6 flex flex-col gap-4 text-left border border-gray-200 hover:shadow-xl"
+            className="bg-white transition-shadow shadow-lg rounded-xl p-6 flex flex-col gap-4 text-left border border-gray-200 hover:shadow-xl home-card"
           >
             <div className="flex items-center gap-3">
               <Icon className="w-6 h-6 text-orange-500" />
