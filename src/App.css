@@ -59,9 +59,12 @@
   overflow: hidden;
 }
 
+.home-card-wrap{
+  padding-bottom: 12px;
+}
 
-.home-card:hover {
-  animation: bounce 0.7s ease;
+.home-card-wrap:hover {
+  /* animation: bounce 0.7s ease; */
   scale: 1.05;
 }
 
