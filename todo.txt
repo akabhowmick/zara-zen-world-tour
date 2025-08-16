@@ -1,9 +1,14 @@
 moving clouds
-
 <img src="../../assets/Home/cloud.png" className="cloud w-32 opacity-40"style={{ top: "20%" }}/>
 <img src="../../assets/Home/cloud.png" className="cloud w-48 opacity-50" style={{ top: "40%", animationDelay: "10s" }} />
 
-
-
-
 find a color pallette
+
+1. make the chapters 
+2. redo the pages 
+3. log in page 
+4. google auth
+5. save scores
+6. choose game types
+7. save game scores
+8. redo ui elements
