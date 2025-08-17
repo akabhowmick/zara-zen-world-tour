@@ -1,4 +1,4 @@
-import type { Chapter } from "../../types/book-types";
+import type { Chapter } from "../../../types/book-types";
 
 // import china0 from "/src/assets/Chapters/03_China/3CH0.png";
 import china1 from "/src/assets/Chapters/03_China/3CH1.png";

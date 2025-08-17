@@ -1,4 +1,4 @@
-import type { Chapter } from "../../types/book-types";
+import type { Chapter } from "../../../types/book-types";
 
 import japan0 from "/src/assets/Chapters/01_Japan/1JP0.png";
 import japan1 from "/src/assets/Chapters/01_Japan/1JP1.png";
