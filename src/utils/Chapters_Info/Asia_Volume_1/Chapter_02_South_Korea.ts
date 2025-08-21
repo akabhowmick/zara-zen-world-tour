@@ -60,7 +60,7 @@ const page13 =
 const page14 =
   "Zara and Zen’s first stop was Japan, just in time for cherry blossom season. They strolled through Kyoto’s historic streets, marveled at the golden Kinkaku-ji temple, and shared sweet mochi under blooming sakura trees. They dressed in tiny dog-sized kimonos and bowed politely to locals, eager to learn every bit of the culture. One highlight? Watching real sumo wrestlers train—Zen even tried to mimic them, much to Zara's amusement.";
 
-export const south_koreaChapter: Chapter = {
+export const southKoreaChapter: Chapter = {
   id: 2,
   title: "Chapter 1: Blossoms of Japan",
   content: `Zara and Zen’s first stop was Japan, just in time for cherry blossom season. They strolled through Kyoto’s historic streets, marveled at the golden Kinkaku-ji temple, and shared sweet mochi under blooming sakura trees. They dressed in tiny dog-sized kimonos and bowed politely to locals, eager to learn every bit of the culture. One highlight? Watching real sumo wrestlers train—Zen even tried to mimic them, much to Zara's amusement.`,
@@ -98,4 +98,5 @@ export const south_koreaChapter: Chapter = {
     south_korea13,
     south_korea14,
   ],
+  country: "South Korea",
 };

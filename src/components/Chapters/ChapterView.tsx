@@ -1,8 +1,8 @@
 import { useState } from "react";
 import type { Chapter } from "../../types/book-types";
 import { chapters } from "../../utils/chapters";
-import { ChapterCard } from "./ChapterCard";
 import { ChapterPage } from "./ChapterPage";
+import { ChaptersTimeline } from "./ChaptersTimeline";
 // import { Sidebar } from "lucide-react";
 // import { MapPin } from "lucide-react";
 
@@ -31,13 +31,27 @@ export const ChaptersView = () => {
         {/* Floating Progress Sidebar */}
         {/* {!selectedChapter && <Sidebar />} */}
 
-        {selectedChapter ? (
+        {/* {selectedChapter ? (
           <ChapterPage selectedChapter={selectedChapter} setSelectedChapter={setSelectedChapter} />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 animate-fade-in">
             {chapters.map((chapter: Chapter) => (
               <ChapterCard key={chapter.id} chapter={chapter} onChapterClick={setSelectedChapter} />
             ))}
+          </div>
+        )} */}
+
+        {selectedChapter ? (
+          <ChapterPage selectedChapter={selectedChapter} setSelectedChapter={setSelectedChapter} />
+        ) : (
+          <div className="animate-fade-in">
+            <ChaptersTimeline
+              chapters={chapters}
+              onSelectChapter={(id: number | string) => {
+                const chapter = chapters.find((c) => c.id === id);
+                if (chapter) setSelectedChapter(chapter);
+              }}
+            />
           </div>
         )}
       </div>

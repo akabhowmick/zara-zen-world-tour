@@ -98,4 +98,5 @@ export const japanChapter: Chapter = {
     japan13,
     japan14,
   ],
+  country: "Japan",
 };

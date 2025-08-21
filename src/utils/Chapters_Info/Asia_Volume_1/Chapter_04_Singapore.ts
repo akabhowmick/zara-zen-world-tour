@@ -98,4 +98,5 @@ export const singaporeChapter: Chapter = {
     singapore13,
     singapore14,
   ],
+  country: "Singapore",
 };

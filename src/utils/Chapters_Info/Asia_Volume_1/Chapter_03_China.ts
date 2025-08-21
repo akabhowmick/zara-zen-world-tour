@@ -96,6 +96,7 @@ export const chinaChapter: Chapter = {
     china12,
     china13,
     china14,
-    china15
+    china15,
   ],
+  country: "China",
 };
