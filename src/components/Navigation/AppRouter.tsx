@@ -5,6 +5,7 @@ import { TriviaView } from "../Trivia/TriviaView";
 import { BlogView } from "../Blog/BlogView";
 import { HomePage } from "../../pages/HomePage";
 import { Navbar } from "./Navbar";
+import { TriviaGamePage } from "../Trivia/TriviaCountryGamePage";
 
 export const AppRouter = () => {
   return (
@@ -15,6 +16,7 @@ export const AppRouter = () => {
         <Route path="/chapters" element={<ChaptersView />} />
         <Route path="/characters" element={<CharactersView />} />
         <Route path="/trivia" element={<TriviaView />} />
+        <Route path="/trivia/:slugId" element={<TriviaGamePage />} />
         <Route path="/blog" element={<BlogView />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

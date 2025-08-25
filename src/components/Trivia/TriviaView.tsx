@@ -8,7 +8,6 @@ const toKebab = (s: string) =>
 export const TriviaView = () => {
   const navigate = useNavigate();
 
-  // Called by TriviaMenu when user picks a country
   const startCountryTrivia = (country: string, id = 1) => {
     const slug = toKebab(country);
     navigate(`/trivia/${slug}+${id}`);
@@ -16,7 +15,6 @@ export const TriviaView = () => {
 
   return (
     <AnimatedLanding title="Select a Country">
-      {/* Ensure TriviaMenu calls onClick(country: string, id?: number) */}
       <TriviaMenu onClick={startCountryTrivia} />
     </AnimatedLanding>
   );
