@@ -1,7 +1,7 @@
 import { ChevronRight } from "lucide-react";
-import type { Chapter } from "../../types/book-types";
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import type { Chapter } from "../../../types/book-types";
 
 export const ChapterCard = ({
   chapter,
@@ -49,9 +49,8 @@ export const ChapterCard = ({
             <h2 className="text-xl font-semibold text-gray-800 leading-tight">{chapter.title}</h2>
             <ChevronRight className="h-5 w-5 text-gray-400 flex-shrink-0 ml-2" />
           </div>
-          <p className="text-gray-500 text-xs mb-4 font-medium">Published: {chapter.publishedAt}</p>
           <p className="text-gray-700 text-sm leading-relaxed flex-grow">
-            {chapter.content.substring(0, 120)}...
+            {chapter.content.substring(0, 100)}...
           </p>
         </div>
       </div>

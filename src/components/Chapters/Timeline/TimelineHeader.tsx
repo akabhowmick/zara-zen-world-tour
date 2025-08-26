@@ -2,7 +2,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import React from "react";
 
 function ScrollProgressBar() {
-  // Use viewport scroll progress (no container ref needed)
   const { scrollYProgress } = useScroll();
   const width = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
