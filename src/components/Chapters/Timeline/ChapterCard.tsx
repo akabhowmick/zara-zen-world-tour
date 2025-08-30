@@ -18,7 +18,7 @@ export const ChapterCard = ({
 
   // Entrance animation: slide from the center line to its side
   const x = useTransform(scrollYProgress, [0, 1], [side === "left" ? 24 : -24, 0]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const opacity = useTransform(scrollYProgress, [0.5, 1], [0.5, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [side === "left" ? -1.5 : 1.5, 0]);
 
   return (

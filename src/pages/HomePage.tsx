@@ -12,12 +12,12 @@ export const HomePage = () => {
   };
 
   return (
-    <div className=" min-h-screen">
-      {/* Hero Section */}
+    <div className="min-h-screen">
+      {/* Hero Section (unchanged) */}
       <section className="text-center py-8 px-4">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl md:text-5xl font-extrabold text-black">
-            Zara & Zen's World Tour!
+            Zara & Zen&apos;s World Tour!
           </h1>
           <Player
             autoplay
@@ -42,28 +42,104 @@ export const HomePage = () => {
           </button>
         </div>
       </section>
-
-      {/* Section Grid */}
+      {/* Zig-Zag Trail */}
       <section
         ref={scrollRef}
-        className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8"
+        className="relative max-w-6xl mx-auto px-4 pb-28"
+        aria-label="Zara & Zen sections"
       >
-        {tabs.map(({ key, label, icon: Icon, description }) => (
-          <div className="home-card-wrap">
-            <Link
-              key={key}
-              to={key}
-              className=" bg-white transition-shadow shadow-lg rounded-xl p-6 flex flex-col gap-4 text-left border border-gray-200 hover:shadow-xl home-card"
-            >
-              <div className="flex items-center gap-3 home">
-                <Icon className="w-6 h-6 text-orange-500" />
-                <h3 className="text-2xl font-bold text-blue-800">{label}</h3>
-              </div>
-              <p className="text-gray-700">{description}</p>
-              <span className="text-blue-600 font-semibold mt-auto">Go to {label} →</span>
-            </Link>
-          </div>
-        ))}
+        {/* Wavy dashed path in the background */}
+        <svg
+          className="pointer-events-none absolute inset-0 -z-10"
+          width="100%"
+          height="100%"
+          viewBox="0 0 1000 3000"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          {/* A repeating cubic-bezier snake. Scale with viewBox so it stretches to the section height */}
+          <path
+            d="
+        M 500 0
+        C 250 120, 250 240, 500 360
+        S 750 600, 500 720
+        S 250 960, 500 1080
+        S 750 1320, 500 1440
+        S 250 1680, 500 1800
+        S 750 2040, 500 2160
+        S 250 2400, 500 2520
+        S 750 2760, 500 2880
+      "
+            fill="none"
+            stroke="#F6C453"
+            strokeWidth="6"
+            strokeDasharray="8 14"
+            strokeLinecap="round"
+            opacity="0.9"
+          />
+        </svg>
+
+        <div className="space-y-20">
+          {tabs.map(({ key, label, icon: Icon, description, doodle, doodleAlt }, i) => {
+            const isLeft = i % 2 === 0;
+
+            return (
+              <article key={key} className="relative">
+                {/* pin at the wavy path center (approx at mid of row) */}
+                <div className="absolute left-1/2 -translate-x-1/2 -top-3 hidden md:flex">
+                  <span className="inline-flex items-center justify-center rounded-full bg-white shadow p-2 ring-1 ring-black/5">
+                    {/* tiny pin dot */}
+                    <span className="h-3 w-3 rounded-full bg-rose-500 block" />
+                  </span>
+                </div>
+
+                {/* row */}
+                <div className="flex">
+                  {/* the wide card (70% width) */}
+                  <a
+                    href={key}
+                    className={[
+                      "group rounded-2xl border border-gray-200 bg-white p-6 shadow hover:shadow-lg transition",
+                      "md:w-[70%] lg:w-[72%] xl:w-[68%]",
+                      isLeft ? "ml-0 mr-auto" : "ml-auto mr-0",
+                    ].join(" ")}
+                  >
+                    <div className="flex items-center gap-3 mb-2">
+                      <Icon className="w-6 h-6 text-orange-500" />
+                      <h3 className="text-2xl font-bold text-blue-800">{label}</h3>
+                    </div>
+                    <p className="text-gray-700 leading-relaxed">{description}</p>
+                    <Link to={key}>
+                      <div className="mt-4 inline-flex items-center font-semibold text-blue-600">
+                        Go to {label}
+                        <span className="ml-1 transition-transform group-hover:translate-x-0.5">
+                          →
+                        </span>
+                      </div>
+                    </Link>
+                  </a>
+
+                  {/* doodle on the OUTER side, only on md+ to keep mobile clean (optional) */}
+                  {doodle && (
+                    <div
+                      className={["hidden md:block shrink-0", isLeft ? "ml-6" : "mr-6"].join(" ")}
+                      aria-hidden="true"
+                    >
+                      <img
+                        src={doodle}
+                        alt={doodleAlt ?? ""}
+                        className={[
+                          "w-28 lg:w-32 xl:w-36 opacity-90",
+                          isLeft ? "order-last" : "order-first",
+                        ].join(" ")}
+                      />
+                    </div>
+                  )}
+                </div>
+              </article>
+            );
+          })}
+        </div>
       </section>
     </div>
   );

@@ -9,7 +9,7 @@ const footerLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-black text-gray-200 py-12 px-6">
+    <footer className="bg-black text-gray-200 py-12 px-6 mt-4">
       <div className="max-w-6xl mx-auto flex flex-col items-center space-y-6 text-center">
         {/* Logo & Title */}
         <Logo />
@@ -23,10 +23,8 @@ export const Footer = () => {
           ))}
         </nav>
 
-        {/* Divider */}
         <Divider />
 
-        {/* Newsletter Form */}
         <NewsletterForm />
 
         {/* Copyright */}
