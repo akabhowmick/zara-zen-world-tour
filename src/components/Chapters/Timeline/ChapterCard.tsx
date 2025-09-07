@@ -1,4 +1,3 @@
-import { ChevronRight } from "lucide-react";
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import type { Chapter } from "../../../types/book-types";
@@ -17,8 +16,9 @@ export const ChapterCard = ({
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.8", "end 0.6"] });
 
   // Entrance animation: slide from the center line to its side
+  // TODO double check animation logic 
   const x = useTransform(scrollYProgress, [0, 1], [side === "left" ? 24 : -24, 0]);
-  const opacity = useTransform(scrollYProgress, [0.5, 1], [0.5, 1]);
+  const opacity = useTransform(scrollYProgress, [0.75, 1], [0.75, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [side === "left" ? -1.5 : 1.5, 0]);
 
   return (
@@ -45,13 +45,6 @@ export const ChapterCard = ({
               )}
             </span>
           )}
-          <div className="flex items-start justify-between mb-3">
-            <h2 className="text-xl font-semibold text-gray-800 leading-tight">{chapter.title}</h2>
-            <ChevronRight className="h-5 w-5 text-gray-400 flex-shrink-0 ml-2" />
-          </div>
-          <p className="text-gray-700 text-sm leading-relaxed flex-grow">
-            {chapter.content.substring(0, 100)}...
-          </p>
         </div>
       </div>
     </motion.article>

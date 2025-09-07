@@ -26,7 +26,7 @@ export const TimelineRow = ({
         {isLeft ? (
           <ChapterCard chapter={chapter} index={index} onChapterClick={onClick} side="left" />
         ) : (
-          <CountryTag country={country} />
+          <CountryTag country={country} chapter={chapter} />
         )}
       </div>
 
@@ -38,11 +38,9 @@ export const TimelineRow = ({
         {!isLeft ? (
           <ChapterCard chapter={chapter} index={index} onChapterClick={onClick} side="right" />
         ) : (
-          <CountryTag country={country} />
+          <CountryTag chapter={chapter} country={country} />
         )}
       </div>
     </li>
   );
 };
-
-  

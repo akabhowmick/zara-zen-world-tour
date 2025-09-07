@@ -20,11 +20,11 @@ export const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
             <Book className="h-8 w-8 text-blue-400" />
-            <span className="font-bold text-xl">Zara and Zen's World Tour!</span>
+            <span className="font-bold text-lg md:text-xl">Zara and Zen's World Tour!</span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden lg:flex space-x-8">
             {tabs.map(({ key, label, icon: Icon }) => (
               <Link
                 key={key}
@@ -40,7 +40,7 @@ export const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-white hover:text-blue-400 transition-colors"

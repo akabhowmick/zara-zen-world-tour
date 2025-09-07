@@ -29,7 +29,7 @@ export const HomeTabs = () => {
                   <img
                     src={doodle}
                     alt={doodleAlt ?? ""}
-                    className="w-40 lg:w-48 xl:w-56 mx-auto drop-shadow-sm"
+                    className="w-40 lg:w-48 rounded xl:w-56 mx-auto drop-shadow-sm"
                     loading="lazy"
                   />
                 ) : (

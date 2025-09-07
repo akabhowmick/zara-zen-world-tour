@@ -1,3 +1,6 @@
+import { ChevronRight } from "lucide-react";
+import type { Chapter } from "../../../types/book-types";
+
 const toKebab = (s: string) =>
   s
     .toLowerCase()
@@ -36,12 +39,12 @@ const countryFlag = (country: string) => {
 
 const getTriviaHref = (country: string) => `/trivia/${toKebab(country)}`;
 
-export const CountryTag = ({ country }: { country: string }) => {
+export const CountryTag = ({ country, chapter }: { country: string; chapter: Chapter }) => {
   const flag = countryFlag(country);
   const href = getTriviaHref(country);
   return (
     <div className="max-w-md rounded-2xl border border-gray-200 bg-white/80 p-4 shadow-sm backdrop-blur-sm">
-      <div className="flex items-center gap-3">
+      <div className="flex flex-col items-center gap-3">
         <span className="text-xl">{flag}</span>
         <div className="min-w-0">
           <p className="text-sm font-semibold text-gray-800">{country}</p>
@@ -52,6 +55,13 @@ export const CountryTag = ({ country }: { country: string }) => {
             Play {country} Trivia →
           </a>
         </div>
+        <div className="flex items-start justify-between mb-3">
+          <h2 className="text-xl font-semibold text-gray-800 leading-tight">{chapter.title}</h2>
+          <ChevronRight className="h-5 w-5 text-gray-400 flex-shrink-0 ml-2" />
+        </div>
+        <p className="text-gray-700 text-sm leading-relaxed flex-grow">
+          {chapter.content.substring(0, 100)}...
+        </p>
       </div>
     </div>
   );
