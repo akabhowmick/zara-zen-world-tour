@@ -13,12 +13,10 @@ export const ChapterCard = ({
   side: "left" | "right";
 }) => {
   const ref = React.useRef<HTMLDivElement | null>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.8", "end 0.6"] });
-
-  // Entrance animation: slide from the center line to its side
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end end"] });
   // TODO double check animation logic 
   const x = useTransform(scrollYProgress, [0, 1], [side === "left" ? 24 : -24, 0]);
-  const opacity = useTransform(scrollYProgress, [0.75, 1], [0.75, 1]);
+  const opacity = useTransform(scrollYProgress, [0.5, 1], [0.65, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [side === "left" ? -1.5 : 1.5, 0]);
 
   return (

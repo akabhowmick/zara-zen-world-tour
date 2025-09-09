@@ -1,4 +1,3 @@
-import { ChevronRight } from "lucide-react";
 import type { Chapter } from "../../../types/book-types";
 
 const toKebab = (s: string) =>
@@ -60,9 +59,9 @@ export const CountryTag = ({ country, chapter }: { country: string; chapter: Cha
           </div>
         </div>
 
-        <div className="flex items-start justify-between mb-3">
-          <h2 className="text-xl font-semibold text-gray-800 leading-tight">Or Read {chapter.title}</h2>
-          <ChevronRight className="h-5 w-5 text-gray-400 flex-shrink-0 ml-2" />
+        <div className="sm:hidden md:block flex items-start justify-between mb-3">
+          <h2 className="text-xl font-semibold text-gray-800 leading-tight">Or Read - {chapter.title}</h2>
+         
         </div>
         <p className="text-gray-700 text-sm leading-relaxed flex-grow">
           {chapter.content.substring(0, 100)}...
