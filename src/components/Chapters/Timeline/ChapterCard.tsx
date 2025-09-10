@@ -23,7 +23,7 @@ export const ChapterCard = ({
     <motion.article
       ref={ref}
       style={{ x, opacity, rotate }}
-      className="group relative max-w-md cursor-pointer select-none"
+      className="relative max-w-md cursor-pointer select-none"
       onClick={() => onChapterClick(chapter)}
       aria-label={`${chapter.country}: ${chapter.title}`}
     >

@@ -1,4 +1,6 @@
 import type { Character } from "../types/book-types";
+import ZenImage from "src/assets/Character_Images/zen_main.png";
+import ZaraImage from "src/assets/Character_Images/zara_main.png";
 
 export const mockCharacters: Character[] = [
   {
@@ -6,7 +8,7 @@ export const mockCharacters: Character[] = [
     name: "Zara",
     description:
       "A small, fluffy Pomeranian with a lightened golden-orange coat and soft cream accents. She has large, expressive eyes and a cheerful, curious personality. Zara wears a purple cable-knit sweater and travels across Asia with Zen.",
-    image: "src/assets/Character_Images/zara_main.png",
+    image: ZaraImage,
     traits: ["Cheerful", "Curious", "Petite", "Fluffy", "Loves Sushi"],
   },
   {
@@ -14,7 +16,7 @@ export const mockCharacters: Character[] = [
     name: "Zen",
     description:
       "A small golden mixed-breed dog with a slightly lighter coat than Zara. He has a longer face, floppy ears, and a sweet, playful puppy-like expression. Zen wears a light blue cable-knit sweater and enjoys exploring new places.",
-    image: "src/assets/Character_Images/zen_main.png",
+    image: ZenImage,
     traits: ["Playful", "Sweet", "Inquisitive", "Floppy-eared", "Foodie"],
   },
 ];

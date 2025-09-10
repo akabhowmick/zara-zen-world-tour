@@ -6,13 +6,6 @@ import { chinaChapter } from "./Chapters_Info/Asia_Volume_1/Chapter_03_China";
 import { southKoreaChapter } from "./Chapters_Info/Asia_Volume_1/Chapter_02_South_Korea";
 
 export const chapters: Chapter[] = [
-  // {
-  //   id: 1,
-  //   title: "Prologue: A Snowy Morning in New York",
-  //   content: `On a snowy winter morning in New York City, Zara and Zen sat bundled in warm jackets, sipping coffee and chatting on a busy 5th Avenue sidewalk. As snowflakes danced around them, they dreamed of distant lands and faraway adventures. Inspired by the books they'd read and the stories they'd heard, they decided it was time to explore the world themselves. With wagging tails and beating hearts, they raced home to plan their journey.`,
-  //   publishedAt: "2025-07-01",
-  //   image: chapterImage,
-  // },
   japanChapter,
   chinaChapter,
   {
@@ -21,7 +14,7 @@ export const chapters: Chapter[] = [
     content: `Next, Zara and Zen arrived in Chiang Mai during the Yi Peng lantern festival. Lanterns floated into the sky like stars, and the dogs joined local children in crafting paper lanterns with wishes inside. They tasted mango sticky rice, rode a tuk-tuk through bustling night markets, and learned how to greet others with a respectful “wai.” Zen got slightly too excited at the floating lanterns and accidentally toppled a flower stand—luckily, everyone laughed.`,
     publishedAt: "2025-07-07",
     image: chapterImage,
-    country: "China",
+    country: "Thailand",
   },
   {
     id: 5,
