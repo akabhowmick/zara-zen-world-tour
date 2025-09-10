@@ -1,6 +1,6 @@
 import type { Character } from "../types/book-types";
-import ZenImage from "src/assets/Character_Images/zen_main.png";
-import ZaraImage from "src/assets/Character_Images/zara_main.png";
+import ZenImage from "../assets/Character_Images/zen_main.png";
+import ZaraImage from "../assets/Character_Images/zara_main.png";
 
 export const mockCharacters: Character[] = [
   {
