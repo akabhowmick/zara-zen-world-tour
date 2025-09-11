@@ -1,16 +1,16 @@
 import type { Chapter } from "../../../types/book-types";
 
-import prologue0 from "src/assets/Chapters/0_Prologue/0PR2.png";
-import prologue1 from "src/assets/Chapters/0_Prologue/0PR2.png";
-import prologue2 from "src/assets/Chapters/0_Prologue/0PR2.png";
-import prologue3 from "src/assets/Chapters/0_Prologue/0PR4.png";
-import prologue4 from "src/assets/Chapters/0_Prologue/0PR2.png";
-import prologue5 from "src/assets/Chapters/0_Prologue/0PR5.png";
+import prologue0 from "../../../assets/Chapters/0_Prologue/0PR2.png";
+import prologue1 from "../../../assets/Chapters/0_Prologue/0PR2.png";
+import prologue2 from "../../../assets/Chapters/0_Prologue/0PR2.png";
+import prologue3 from "../../../assets/Chapters/0_Prologue/0PR4.png";
+import prologue4 from "../../../assets/Chapters/0_Prologue/0PR2.png";
+import prologue5 from "../../../assets/Chapters/0_Prologue/0PR5.png";
 
-import prologue6 from "src/assets/Chapters/0_Prologue/0PR6.png";
-import prologue7 from "src/assets/Chapters/0_Prologue/0PR7.jpeg";
-import prologue8 from "src/assets/Chapters/0_Prologue/0PR8.png";
-import prologue9 from "src/assets/Chapters/0_Prologue/0PR9.png";
+import prologue6 from "../../../assets/Chapters/0_Prologue/0PR6.png";
+import prologue7 from "../../../assets/Chapters/0_Prologue/0PR7.jpeg";
+import prologue8 from "../../../assets/Chapters/0_Prologue/0PR8.png";
+import prologue9 from "../../../assets/Chapters/0_Prologue/0PR9.png";
 
 const page1 =
   "Zara and Zen’s first stop was Japan, just in time for cherry blossom season. They strolled through Kyoto’s historic streets, marveled at the golden Kinkaku-ji temple, and shared sweet mochi under blooming sakura trees. They dressed in tiny dog-sized kimonos and bowed politely to locals, eager to learn every bit of the culture. One highlight? Watching real sumo wrestlers train—Zen even tried to mimic them, much to Zara's amusement.";
