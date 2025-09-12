@@ -13,7 +13,7 @@ export const ChaptersView = () => {
       {!selectedChapter && (
         <div
           className="relative h-72 md:h-96 flex items-center justify-center text-white bg-cover bg-center shadow-lg"
-          style={{ backgroundImage: "url('src/assets/Main/hero2.png')", backgroundSize: "contain" }}
+          style={{ backgroundImage: "url('../../assets/Main/hero2.png')", backgroundSize: "contain" }}
         >
         </div>
       )}
