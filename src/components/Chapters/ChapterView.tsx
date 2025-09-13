@@ -3,6 +3,7 @@ import type { Chapter } from "../../types/book-types";
 import { chapters } from "../../utils/chapters";
 import { ChapterPage } from "./ChapterPage";
 import { ChaptersTimeline } from "./ChaptersTimeline";
+import ChaptersBackground from "../../assets/Main/hero2.png";
 
 export const ChaptersView = () => {
   const [selectedChapter, setSelectedChapter] = useState<Chapter | null>(null);
@@ -11,11 +12,7 @@ export const ChaptersView = () => {
     <div className="min-h-screen bg-gradient-to-br from-yellow-100 via-pink-100 to-blue-100 pb-16">
       {/* Hero Section */}
       {!selectedChapter && (
-        <div
-          className="relative h-72 md:h-96 flex items-center justify-center text-white bg-cover bg-center shadow-lg"
-          style={{ backgroundImage: "url('../../assets/Main/hero2.png')", backgroundSize: "contain" }}
-        >
-        </div>
+        <img src={ChaptersBackground} alt="chapters image" style={{ backgroundSize: "contain" }} className="h-full w-full" />
       )}
 
       <div className="relative max-w-7xl mx-auto px-4 mt-10">
