@@ -61,7 +61,6 @@ export const CountryTag = ({ country, chapter }: { country: string; chapter: Cha
 
         <div className="sm:hidden md:block flex items-start justify-between mb-3">
           <h2 className="text-xl font-semibold text-gray-800 leading-tight">Or Read - {chapter.title}</h2>
-         
         </div>
         <p className="text-gray-700 text-sm leading-relaxed flex-grow">
           {chapter.content.substring(0, 100)}...

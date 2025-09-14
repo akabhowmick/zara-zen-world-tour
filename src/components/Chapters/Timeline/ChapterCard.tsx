@@ -14,20 +14,20 @@ export const ChapterCard = ({
 }) => {
   const ref = React.useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end end"] });
-  // TODO double check animation logic 
+  // TODO double check animation logic
   const x = useTransform(scrollYProgress, [0, 1], [side === "left" ? 24 : -24, 0]);
   const opacity = useTransform(scrollYProgress, [0.5, 1], [0.65, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [side === "left" ? -1.5 : 1.5, 0]);
 
   return (
-    <motion.article
+    <motion.div
       ref={ref}
       style={{ x, opacity, rotate }}
       className="relative max-w-md cursor-pointer select-none"
       onClick={() => onChapterClick(chapter)}
       aria-label={`${chapter.country}: ${chapter.title}`}
     >
-      <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer max-w-sm">
+      <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer max-w-md">
         <div className="flex flex-col h-full">
           {chapter.image && (
             <img
@@ -43,8 +43,16 @@ export const ChapterCard = ({
               )}
             </span>
           )}
+          <div className="sm:hidden md:block flex items-start justify-between mb-3">
+            <h2 className="text-xl font-semibold text-gray-800 leading-tight">
+              {chapter.title}
+            </h2>
+          </div>
+          <p className="text-gray-700 text-sm leading-relaxed flex-grow">
+            {chapter.content.substring(0, 100)}...
+          </p>
         </div>
       </div>
-    </motion.article>
+    </motion.div>
   );
 };
