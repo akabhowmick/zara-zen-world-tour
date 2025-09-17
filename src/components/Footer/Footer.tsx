@@ -74,7 +74,7 @@ const ConsentCheckbox = () => (
 );
 
 const SubmitButton = () => (
-  <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full shadow inline-flex items-center gap-2">
+  <button className="bg-blue-500 hover:bg-blue-600 text-white text-center font-bold py-2 px-6 rounded-full shadow inline-flex items-center gap-2">
     CONTINUE <span className="text-lg">➡️</span>
   </button>
 );
