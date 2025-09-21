@@ -1,8 +1,14 @@
 import type { TriviaQuestion } from "../types/book-types";
 
-export const countries = ["India", "China", "Japan", "SouthKorea", "Thailand", "Singapore"] as const;
+export const countries = [
+  "India",
+  "China",
+  "Japan",
+  "SouthKorea",
+  "Thailand",
+  "Singapore",
+] as const;
 export type Country = (typeof countries)[number];
-
 
 export const countriesWithFlags = [
   {
@@ -17,6 +23,12 @@ export const countriesWithFlags = [
   { name: "South Korea", flag: "https://flagcdn.com/w40/kr.png" },
   { name: "Thailand", flag: "https://flagcdn.com/w40/th.png" },
   { name: "Singapore", flag: "https://flagcdn.com/w40/sg.png" },
+  { name: "Turkey", flag: "https://flagcdn.com/w40/tr.png" },
+  { name: "Greece", flag: "https://flagcdn.com/w40/gr.png" },
+  { name: "Italy", flag: "https://flagcdn.com/w40/it.png" },
+  { name: "Germany", flag: "https://flagcdn.com/w40/de.png" },
+  { name: "France", flag: "https://flagcdn.com/w40/fr.png" },
+  { name: "Spain", flag: "https://flagcdn.com/w40/es.png" },
 ];
 
 const indiaQuestions: TriviaQuestion[] = [
@@ -479,4 +491,5 @@ export const mockTrivia = {
   Thailand: thailandQuestions,
   SouthKorea: southKoreaQuestions,
   Singapore: singaporeQuestions,
+  
 };
