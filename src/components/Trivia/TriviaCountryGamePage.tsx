@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useMemo, useState } from "react";
-import { mockTrivia, type Country } from "../../utils/triviaQuestions";
+import { mockTrivia, type Country } from "../../utils/Trivia/triviaQuestions";
 import { Star } from "lucide-react";
 
 const fromKebab = (s: string) => s.replace(/-/g, " ").toLowerCase();
