@@ -12,3 +12,6 @@ find a color pallette
 6. choose game types
 7. save game scores
 8. redo ui elements
+
+
+4. fix the south korea trivia game

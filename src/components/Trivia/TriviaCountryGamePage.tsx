@@ -1,11 +1,10 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useMemo, useState } from "react";
-import { mockTrivia, type Country } from "../../utils/Trivia/triviaQuestions";
 import { Star } from "lucide-react";
+import { mockTrivia, type Country } from "../../utils/Trivia/triviaquiz";
 
 const fromKebab = (s: string) => s.replace(/-/g, " ").toLowerCase();
 
-/** Parse ":slugId" like "japan+1" → { countryKey: "japan", id: 1 } */
 function parseSlugId(slugId?: string) {
   if (!slugId) return { countryKey: "", id: 1 };
   const [slug, idStr] = slugId.split("+");
@@ -24,13 +23,10 @@ export const TriviaGamePage = () => {
 
   const { countryKey, id } = useMemo(() => parseSlugId(slugId), [slugId]);
 
-  // Resolve country enum/key from mockTrivia
   const country = Object.keys(mockTrivia).find((k) => k.toLowerCase() === countryKey) as
     | Country
     | undefined;
 
-  // If you support multiple quizzes per country, treat `id` as the quiz index (1-based).
-  // If you have a single quiz array per country, we ignore `id` (or you can branch here).
   const trivia = country ? mockTrivia[country] : undefined;
 
   if (!country || !trivia || trivia.length === 0) {
