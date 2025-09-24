@@ -13,7 +13,7 @@ export const AnimatedLanding: React.FC<AnimatedLandingProps> = ({ title, childre
       transition={{ duration: 0.6 }}
       className="max-w-3xl mx-auto text-center py-12"
     >
-      <h1 className="text-4xl font-bold mb-6">{title}</h1>
+      <h1 className="text-4xl font-bold my-6">{title}</h1>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
