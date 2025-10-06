@@ -4,7 +4,6 @@ moving clouds
 
 find a color pallette
 
-1. make the chapters 
 2. redo the pages 
 3. log in page 
 4. google auth
@@ -14,4 +13,4 @@ find a color pallette
 8. redo ui elements
 
 
-4. fix the south korea trivia game
+9. fix the south korea trivia game

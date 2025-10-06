@@ -1,0 +1,32 @@
+@keyframes page-turn-next {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+
+@keyframes page-turn-prev {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+}
+.animate-page-turn-next {
+  animation: page-turn-next 0.4s ease-out;
+}
+
+.animate-page-turn-prev {
+  animation: page-turn-prev 0.4s ease-out;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
