@@ -1,6 +1,16 @@
 import type { Character } from "../types/book-types";
 import ZenImage from "../assets/Character_Images/zen_main.png";
 import ZaraImage from "../assets/Character_Images/zara_main.png";
+import HaruImage from "../assets/Character_Images/CHARACTERS/1.1Haru1.png";
+// import HaruImage from "../assets/Character_Images/CHARACTERS/1.1Haru1.png";
+// import HaruImage from "../assets/Character_Images/CHARACTERS/1.1Haru1.png";
+// import HaruImage from "../assets/Character_Images/CHARACTERS/1.1Haru1.png";
+// import HaruImage from "../assets/Character_Images/CHARACTERS/1.1Haru1.png";
+// import HaruImage from "../assets/Character_Images/CHARACTERS/1.1Haru1.png";
+// import HaruImage from "../assets/Character_Images/CHARACTERS/1.1Haru1.png";
+// import HaruImage from "../assets/Character_Images/CHARACTERS/1.1Haru1.png";
+// import HaruImage from "../assets/Character_Images/CHARACTERS/1.1Haru1.png";
+// import HaruImage from "../assets/Character_Images/CHARACTERS/1.1Haru1.png";
 
 export const mockCharacters: Character[] = [
   {
