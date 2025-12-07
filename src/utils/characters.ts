@@ -29,4 +29,12 @@ export const mockCharacters: Character[] = [
     image: ZenImage,
     traits: ["Playful", "Sweet", "Inquisitive", "Floppy-eared", "Foodie"],
   },
+  {
+    id: 3,
+    name: "Haru",
+    description:
+      "",
+    image: HaruImage,
+    traits: ["", ""],
+  },
 ];
