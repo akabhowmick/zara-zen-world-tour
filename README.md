@@ -1,69 +1,78 @@
-# React + TypeScript + Vite
+## 🌍 Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Z&Z World is an interactive, story-driven web experience built with React.
+The website follows two main characters — Zara and Zen — as they travel across countries, meeting unique local characters, learning life lessons, and exploring global culture through art, storytelling, and mini-games.
 
-Currently, two official plugins are available:
+This project includes:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- A Chapters system (Asia + Europe arcs)
+- A Characters viewer
+- An evolving Trivia mini-games section
+- A Blog area
+- A dynamic homepage with animated and interactive elements
 
-## Expanding the ESLint configuration
+The codebase is structured for modular expansion, clean imports, reusable components, and scalable design.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Characters System
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Each character has:
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- Canonical description
+- Traits & backstory
+- Strict visual reference
+- Image import + metadata card
+- Displayed inside a clean UI grid with modals for extended bios.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. Every chapter represents a country.
+   Contains:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Country flag/icon
+- Hero section with animated elements
+- Chapter narrative
+- Local character(s)
+- Mini scene artworks
+- Navigation to images, trivia, and blog posts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. Trivia Mini-Games (6 Total, Phase 1)
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Countries include:
+
+- India
+- China
+- Japan
+- South Korea
+- Thailand
+- Singapore
+
+Each country has 10 curated questions.
+UI includes:
+
+- Card flipping
+- Progress tracking
+- Result summary
+- Score persistence (local state)
+
+## Contributing
+
+This project is currently developed by a small creative–technical duo.
+New contributors should follow:
+
+- Consistent naming conventions
+- Clean component structure
+- Canonical character references
+- Approved art direction
+
+## Roadmap (Active)
+
+- Add animated markers on global map (ChaptersView)
+- Add country-based mini animations
+- Build Europe trivia set
+- Add story blog posts per country
+- Add collectibles system (stickers, badges)
+- Add full glossary view
+- Add soundtrack/audio layer
+
+## Notes
+
+This project is deeply tied to storytelling, strict character canon, and emotional world-building.
+Please follow approved references and maintain consistency across all scenes, character cards, and interactions.
