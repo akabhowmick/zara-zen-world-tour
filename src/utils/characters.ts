@@ -134,7 +134,7 @@ export const mockCharacters: Character[] = [
   },
   {
     id: 14,
-    name: "Coach Roy",
+    name: "Roy",
     description:
       "A regal peacock cricket coach with teal, emerald, and gold feathers. Calm, articulate, and confident, Coach Roy leads with wisdom and empathy, inspiring pride through discipline.",
     image: RoyImage,

@@ -54,7 +54,7 @@ export const CharactersView = () => {
                 <img
                   src={character.image}
                   alt={character.name}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-72 aspect-square object-contain"
                 />
                 <div className="p-4">
                   <h2 className="text-xl font-semibold mb-2">{character.name}</h2>
