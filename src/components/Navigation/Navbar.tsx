@@ -136,7 +136,7 @@ interface BottomLayerProps {
   onNavClick: (path: string) => void;
 }
 
-const BottomLayer: React.FC<BottomLayerProps> = ({ navLinks }) => {
+const BottomLayer: React.FC<BottomLayerProps> = ({ navLinks, mobileMenuOpen }) => {
   return (
     <div className="bg-white border-t-4 border-yellow-400 px-4 sm:px-6">
       <div className=" mx-auto">
@@ -147,6 +147,16 @@ const BottomLayer: React.FC<BottomLayerProps> = ({ navLinks }) => {
               <NavLink key={key} id={key} label={label} icon={icon} charImage={charImage} />
             ))}
           </div>
+          {/* Mobile Navigation Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden pb-4 border-t pt-4">
+              <div className="flex flex-col space-y-2">
+                {navLinks.map(({ key, label, icon }) => (
+                  <NavLink key={key} id={key} label={label} icon={icon} charImage={""} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
