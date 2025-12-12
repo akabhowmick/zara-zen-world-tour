@@ -26,7 +26,7 @@ import ClaudeImage from "../assets/Character_Images/CHARACTERS/11.2Claude1.png";
 import MartaImage from "../assets/Character_Images/CHARACTERS/12.1Marta1.png";
 import MateoImage from "../assets/Character_Images/CHARACTERS/12.2Mateo1.png";
 
-export const mockCharacters: Character[] = [
+export const bookCharacters: Character[] = [
   {
     id: 1,
     name: "Zara",

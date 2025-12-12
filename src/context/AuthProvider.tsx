@@ -1,57 +1,119 @@
-import React, { createContext, useContext, type ReactNode, useEffect } from "react";
+import React, { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import { supabase } from "../api/supabase";
-import type { UserSignIn } from "../types/user";
+import {
+  getCurrentUserSupabase,
+  signInUserSupabase,
+  signOutUserSupabase,
+  signUpUserSupabase,
+} from "../api/Auth/auth";
+
+interface User {
+  id: string;
+  email: string;
+  user_metadata?: {
+    full_name?: string;
+  };
+}
 
 interface AuthContextType {
+  user: User | null;
+  loading: boolean;
   login: (email: string, password: string) => Promise<boolean>;
-  signup: (newUser: UserSignIn, password: string) => Promise<boolean>;
-  logout: () => void;
+  signup: (email: string, password: string, fullName: string) => Promise<boolean>;
+  logout: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  // Initialize user session on mount
   useEffect(() => {
-    const fetchUser = async () => {
-      const { data, error } = await supabase.auth.getUser();
-      if (data?.user && !error) {
-        console.log("fetched saved user");
+    const initializeAuth = async () => {
+      const { data, error } = await getCurrentUserSupabase();
+
+      if (error || !data?.user) {
+        setLoading(false);
+        return;
       }
+
+      setUser({
+        id: data.user.id,
+        email: data.user.email || "",
+        user_metadata: data.user.user_metadata,
+      });
+
+      setLoading(false);
     };
 
-    fetchUser();
+    initializeAuth();
+
+    // Listen for auth changes
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange(async (event, session) => {
+      console.log(event);
+      if (session?.user) {
+        setUser({
+          id: session.user.id,
+          email: session.user.email || "",
+          user_metadata: session.user.user_metadata,
+        });
+      } else {
+        setUser(null);
+      }
+      setLoading(false);
+    });
+
+    return () => subscription?.unsubscribe();
   }, []);
 
-  // Login Function using Supabase
   const login = async (email: string, password: string) => {
-    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-    console.error(error);
-    if (error) return false;
-
-    const userMetadata = data.user?.user_metadata;
-    console.log(userMetadata);
-
-    return true;
+    const { data, error } = await signUpUserSupabase(email, password);
+    if (error) {
+      console.error("Login error:", error);
+      return false;
+    }
+    if (data?.user) {
+      setUser({
+        id: data.user.id,
+        email: data.user.email!,
+        user_metadata: data.user.user_metadata,
+      });
+      return true;
+    }
+    return false;
   };
 
-  // 🔹 Signup Function using Supabase
-  const signup = async (newUser: UserSignIn, password: string) => {
-    const { data, error } = await supabase.auth.signUp({
-      email: newUser.email,
-      password,
-    });
-    console.log(data);
-    if (error) return false;
-    return true;
+  const signup = async (email: string, password: string) => {
+    const { data, error } = await signInUserSupabase(email, password);
+    if (error) {
+      console.error("Signup error:", error);
+      return false;
+    }
+    if (data?.user) {
+      setUser({
+        id: data.user.id,
+        email: data.user.email!,
+        user_metadata: data.user.user_metadata,
+      });
+      return true;
+    }
+    return false;
   };
 
-  // Logout Function
   const logout = async () => {
-    await supabase.auth.signOut();
-    localStorage.removeItem("authSchool");
+    await signOutUserSupabase();
+    setUser(null);
   };
 
-  return <AuthContext.Provider value={{ login, signup, logout }}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={{ user, loading, login, signup, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
 };
 
 // eslint-disable-next-line react-refresh/only-export-components

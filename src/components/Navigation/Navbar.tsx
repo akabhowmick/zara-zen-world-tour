@@ -1,76 +1,149 @@
-import { Book, Users, Trophy, PencilLine, X, Menu, HomeIcon } from "lucide-react";
+import { Book, Users, Trophy, PencilLine, Menu, X, Home } from "lucide-react";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { NavLink } from "./NavLink";
+import bgNavbar from "../../assets/Home/cloud.png";
+import { bookCharacters } from "../../utils/characters";
 
-const tabs = [
-  { key: "/", label: "Home", icon: HomeIcon },
-  { key: "/chapters", label: "Chapters", icon: Book },
-  { key: "/characters", label: "Characters", icon: Users },
-  { key: "/trivia", label: "Trivia", icon: Trophy },
-  { key: "/blog", label: "Blogs", icon: PencilLine },
-] as const;
+interface NavLink {
+  key: string;
+  label: string;
+  icon: React.ReactNode;
+  charImage: string;
+}
+
+const NAV_LINKS: NavLink[] = [
+  {
+    key: "/",
+    label: "Home",
+    icon: <Home className="h-5 w-5" />,
+    charImage: bookCharacters[0].image,
+  },
+  {
+    key: "/chapters",
+    label: "Chapters",
+    icon: <Book className="h-5 w-5" />,
+    charImage: bookCharacters[1].image,
+  },
+  {
+    key: "/characters",
+    label: "Characters",
+    icon: <Users className="h-5 w-5" />,
+    charImage: bookCharacters[2].image,
+  },
+  {
+    key: "/trivia",
+    label: "Trivia",
+    icon: <Trophy className="h-5 w-5" />,
+    charImage: bookCharacters[3].image,
+  },
+  {
+    key: "/blog",
+    label: "Blogs",
+    icon: <PencilLine className="h-5 w-5" />,
+    charImage: bookCharacters[4].image,
+  },
+];
+
+const BRAND_LOGO = "🐾";
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const [activePath, setActivePath] = useState("chapters");
+
+  const isActive = (path: string) => activePath === path;
+
+  const handleNavClick = (path: string) => {
+    console.log(path);
+    setActivePath(path);
+    setMobileMenuOpen(false);
+  };
 
   return (
-    <nav className="bg-slate-900 text-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center space-x-2">
-            <Book className="h-8 w-8 text-blue-400" />
-            <span className="font-bold text-lg md:text-xl">Zara and Zen's World Tour!</span>
-          </div>
+    <nav
+      className={`"w-full shadow-lg border-t-4 border-yellow-400  bg-[url(${bgNavbar})] bg-yellow-50`}
+    >
+      {/* Top Layer: Logo and Auth */}
+      <TopLayer mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex space-x-8">
-            {tabs.map(({ key, label, icon: Icon }) => (
-              <Link
-                key={key}
-                to={key}
-                className={`flex items-center space-x-2 px-3 py-2 rounded-md transition-colors ${
-                  location.pathname === key ? "bg-blue-600" : "hover:bg-slate-700"
-                }`}
-              >
-                <Icon className="h-5 w-5" />
-                <span>{label}</span>
-              </Link>
-            ))}
-          </div>
+      {/* Bottom Layer: Navigation Links */}
+      <BottomLayer
+        navLinks={NAV_LINKS}
+        isActive={isActive}
+        mobileMenuOpen={mobileMenuOpen}
+        onNavClick={handleNavClick}
+      />
+    </nav>
+  );
+};
 
-          {/* Mobile menu button */}
-          <div className="lg:hidden">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-white hover:text-blue-400 transition-colors"
-            >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+interface TopLayerProps {
+  mobileMenuOpen: boolean;
+  setMobileMenuOpen: (open: boolean) => void;
+}
+
+const TopLayer: React.FC<TopLayerProps> = ({ mobileMenuOpen, setMobileMenuOpen }) => {
+  return (
+    <div className=" px-4 py-3 sm:px-6">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        {/* Logo Section */}
+        <button
+          className="flex items-center space-x-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-lg hover:opacity-90 transition-opacity"
+          onClick={() => (window.location.href = "/")}
+        >
+          <span className="text-3xl">{BRAND_LOGO}</span>
+          <div className="hidden sm:block">
+            <h1 className="text-xl font-bold text-blue-900">Zara & Zen</h1>
+            <p className="text-xs text-blue-800">World Tour</p>
           </div>
+        </button>
+
+        {/* Desktop Auth Links */}
+        <div className="hidden md:flex items-center space-x-4">
+          <button className="flex items-center space-x-1 px-4 py-2 rounded-lg bg-white text-blue-600 font-semibold hover:bg-blue-50 transition-colors">
+            <span>Log in</span>
+          </button>
+          <button className="flex items-center space-x-1 px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors">
+            <span>Sign up</span>
+          </button>
         </div>
 
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="md:hidden pb-4">
-            <div className="flex flex-col space-y-2">
-              {tabs.map(({ key, label, icon: Icon }) => (
-                <Link
-                  key={key}
-                  to={key}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center space-x-2 px-3 py-2 rounded-md transition-colors ${
-                    location.pathname === key ? "bg-blue-600" : "hover:bg-slate-700"
-                  }`}
-                >
-                  <Icon className="h-5 w-5" />
-                  <span>{label}</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
+        {/* Mobile Menu Toggle */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden p-2 rounded-lg hover:bg-orange-300 transition-colors"
+          aria-label="Toggle menu"
+        >
+          {mobileMenuOpen ? (
+            <X className="h-6 w-6 text-blue-900" />
+          ) : (
+            <Menu className="h-6 w-6 text-blue-900" />
+          )}
+        </button>
       </div>
-    </nav>
+    </div>
+  );
+};
+
+interface BottomLayerProps {
+  navLinks: NavLink[];
+  isActive: (path: string) => boolean;
+  mobileMenuOpen: boolean;
+  onNavClick: (path: string) => void;
+}
+
+const BottomLayer: React.FC<BottomLayerProps> = ({ navLinks }) => {
+  return (
+    <div className="bg-white border-t-4 border-yellow-400 px-4 sm:px-6">
+      <div className=" mx-auto">
+        <div className="flex items-center justify-between py-4">
+          {/* Desktop Navigation Links - spread evenly */}
+          <div className="hidden md:flex items-center justify-between flex-1 gap-2 px-4">
+            {navLinks.map(({ key, label, icon, charImage }) => (
+              <NavLink key={key} id={key} label={label} icon={icon} charImage={charImage} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };

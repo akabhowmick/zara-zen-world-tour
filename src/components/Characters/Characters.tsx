@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Character } from "../../types/book-types";
-import { mockCharacters } from "../../utils/characters";
+import { bookCharacters } from "../../utils/characters";
 
 export const CharactersView = () => {
   const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null);
@@ -45,7 +45,7 @@ export const CharactersView = () => {
         <div>
           <h1 className="text-3xl font-bold my-8 text-center">Characters</h1>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {mockCharacters.map((character) => (
+            {bookCharacters.map((character) => (
               <div
                 key={character.id}
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
