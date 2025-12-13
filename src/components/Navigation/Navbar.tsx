@@ -2,6 +2,7 @@ import { Book, Users, Trophy, PencilLine, Menu, X, Home } from "lucide-react";
 import { useState } from "react";
 import { NavLink } from "./NavLink";
 import { bookCharacters } from "../../utils/characters";
+import { Link } from "react-router-dom";
 
 interface NavLink {
   key: string;
@@ -58,9 +59,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav
-      className={`"w-full shadow-lg border-t-4 border-yellow-400 bg-yellow-50`}
-    >
+    <nav className={`"w-full shadow-lg border-t-4 border-yellow-400 bg-yellow-50`}>
       {/* Top Layer: Logo and Auth */}
       <TopLayer mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
 
@@ -97,13 +96,20 @@ const TopLayer: React.FC<TopLayerProps> = ({ mobileMenuOpen, setMobileMenuOpen }
         </button>
 
         {/* Desktop Auth Links */}
+
         <div className="hidden md:flex items-center space-x-4">
-          <button className="flex items-center space-x-1 px-4 py-2 rounded-lg bg-white text-blue-600 font-semibold hover:bg-blue-50 transition-colors">
+          <Link
+            to="/login"
+            className="flex items-center space-x-1 px-4 py-2 rounded-lg bg-white text-blue-600 font-semibold hover:bg-blue-50 transition-colors"
+          >
             <span>Log in</span>
-          </button>
-          <button className="flex items-center space-x-1 px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors">
+          </Link>
+          <Link
+            to="/signup"
+            className="flex items-center space-x-1 px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors"
+          >
             <span>Sign up</span>
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}

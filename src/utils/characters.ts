@@ -3,7 +3,7 @@ import ZenImage from "../assets/Character_Images/zen_main.png";
 import ZaraImage from "../assets/Character_Images/zara_main.png";
 import HaruImage from "../assets/Character_Images/CHARACTERS/1.1Haru1.png";
 import PixieImage from "../assets/Character_Images/CHARACTERS/1.2Pixie1.png";
-import DrKimImage from "../assets/Character_Images/CHARACTERS/2.1Dr. Kim1.png";
+import DrKimImage from "../assets/Character_Images/CHARACTERS/2.1Dr.Kim1.png";
 import AkashiImage from "../assets/Character_Images/CHARACTERS/2.2Akashi1.png";
 import ShifuImage from "../assets/Character_Images/CHARACTERS/3.1Shifu1.png";
 import ShaoImage from "../assets/Character_Images/CHARACTERS/3.2Shao1.png";
