@@ -1,7 +1,6 @@
 import { Book, Users, Trophy, PencilLine, Menu, X, Home } from "lucide-react";
 import { useState } from "react";
 import { NavLink } from "./NavLink";
-import bgNavbar from "../../assets/Home/cloud.png";
 import { bookCharacters } from "../../utils/characters";
 
 interface NavLink {
@@ -60,7 +59,7 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`"w-full shadow-lg border-t-4 border-yellow-400  bg-[url(${bgNavbar})] bg-yellow-50`}
+      className={`"w-full shadow-lg border-t-4 border-yellow-400 bg-yellow-50`}
     >
       {/* Top Layer: Logo and Auth */}
       <TopLayer mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
@@ -91,7 +90,7 @@ const TopLayer: React.FC<TopLayerProps> = ({ mobileMenuOpen, setMobileMenuOpen }
           onClick={() => (window.location.href = "/")}
         >
           <span className="text-3xl">{BRAND_LOGO}</span>
-          <div className="hidden sm:block">
+          <div className="block">
             <h1 className="text-xl font-bold text-blue-900">Zara & Zen</h1>
             <p className="text-xs text-blue-800">World Tour</p>
           </div>
