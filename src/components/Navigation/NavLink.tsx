@@ -18,11 +18,13 @@ export const NavLink: React.FC<NavLinkProps> = ({ id, label, charImage }) => {
       className={`flex flex-col items-center space-y-2 transition-colors`}
       aria-current={isActive ? "page" : undefined}
     >
-      <img
-        className="w-14 h-14 rounded-2xl object-cover"
-        src={charImage}
-        alt="character image on top of link"
-      />
+      {charImage !== "mobile" && (
+        <img
+          className="w-14 h-14 rounded-2xl object-cover"
+          src={charImage}
+          alt="character image on top of link"
+        />
+      )}
       <span
         className={`px-3 py-2 rounded-md text-center transition-colors ${
           isActive ? "bg-blue-600 text-white" : "hover:bg-blue-100"

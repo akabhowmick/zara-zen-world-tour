@@ -152,7 +152,7 @@ const BottomLayer: React.FC<BottomLayerProps> = ({ navLinks, mobileMenuOpen }) =
             <div className="md:hidden pb-4 border-t pt-4">
               <div className="flex flex-col space-y-2">
                 {navLinks.map(({ key, label, icon }) => (
-                  <NavLink key={key} id={key} label={label} icon={icon} charImage={""} />
+                  <NavLink key={key} id={key} label={label} icon={icon} charImage={"mobile"} />
                 ))}
               </div>
             </div>
