@@ -7,6 +7,7 @@ import { HomePage } from "../../pages/HomePage";
 import { Navbar } from "./Navbar";
 import { TriviaGamePage } from "../Trivia/TriviaCountryGamePage";
 import { LoginPage } from "../../pages/LoginPage";
+import { SignupPage } from "../../pages/SignupPage";
 
 export const AppRouter = () => {
   return (
@@ -20,7 +21,7 @@ export const AppRouter = () => {
         <Route path="/trivia/:slugId" element={<TriviaGamePage />} />
         <Route path="/blog" element={<BlogView />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<BlogView />} />
+        <Route path="/signup" element={<SignupPage />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
