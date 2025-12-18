@@ -21,3 +21,16 @@ CREATE TABLE trivia_questions (
   correct_answer INTEGER NOT NULL,
   explanation TEXT,
 );
+
+-- TODO insert //public.profiles (
+CREATE TABLE profiles ( 
+  id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+  name VARCHAR(100) NOT NULL,
+  phone_number VARCHAR(20),
+  email VARCHAR(255) NOT NULL UNIQUE,
+  games_played INTEGER DEFAULT 0,
+  high_score INTEGER DEFAULT 0,
+  current_tier VARCHAR(50) DEFAULT 'Beginner',
+  -- created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  -- updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
