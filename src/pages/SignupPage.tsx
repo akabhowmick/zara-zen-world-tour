@@ -83,21 +83,6 @@ export const SignupPage = () => {
 
       <form onSubmit={handleSubmit} className="space-y-5 mt-6">
         <InputField
-          label="Full Name"
-          name="name"
-          type="text"
-          value={formState.name.value}
-          error={formState.name.error}
-          touched={formState.name.touched}
-          placeholder="John Doe"
-          autoComplete="name"
-          required
-          onChange={(value) => handleChange("name", value, validationRules.name)}
-          onBlur={() => handleBlur("name", validationRules.name)}
-          disabled={loading}
-        />
-
-        <InputField
           label="Email"
           name="email"
           type="email"
