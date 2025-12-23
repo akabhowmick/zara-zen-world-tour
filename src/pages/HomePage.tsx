@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import globeAnimation from "../assets/Home/spinning-globe.json";
 import { HomeTabs } from "../components/Home/HomeTabs";
+import { Link } from "react-router-dom";
 
 export const HomePage = () => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
@@ -33,12 +34,13 @@ export const HomePage = () => {
           <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-6">
             Follow two pups around the globe in stories, games, and fun-filled facts!
           </p>
-          <button
+          <Link
+            to={"/chapters"}
             onClick={scrollToSections}
             className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition"
           >
             Start Exploring
-          </button>
+          </Link>
         </div>
       </section>
       <HomeTabs />
