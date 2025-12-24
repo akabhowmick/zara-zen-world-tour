@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useAuth } from "../context/AuthProvider";
-import type { BookUser } from "../types/user-profiles-types";
+import type { BookUser, UpdateProfileData } from "../types/user-profiles-types";
 import { ProfileService } from "../services/ProfileServices";
 
 export const useProfile = () => {

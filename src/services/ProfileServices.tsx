@@ -1,5 +1,5 @@
 import { supabase } from "../api/supabase";
-import type { BookUser } from "../types/user-profiles-types";
+import { calculateTier, type BookUser, type GameStats, type UpdateProfileData } from "../types/user-profiles-types";
 
 export class ProfileService {
   /**

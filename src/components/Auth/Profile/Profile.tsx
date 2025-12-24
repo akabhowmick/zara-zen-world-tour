@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Edit2, LogOut, Mail, Phone, Loader2 } from "lucide-react";
-import { useAuth } from "../../context/AuthProvider";
-import { useProfile } from "../../hooks/useProfile";
-import { Button } from "../Auth/Button";
-import { Alert } from "../Auth/Alert";
-import { ProfileCard } from "../Profile/ProfileCard";
-import { ProfileEditForm } from "../Profile/ProfileEditForm";
-import type { UpdateProfileData } from "../../types/profile";
+import { useAuth } from "../../../context/AuthProvider";
+import { useProfile } from "../../../hooks/useProfile";
+import { Button } from "../Button";
+import { Alert } from "../Alert";
+import type { UpdateProfileData } from "../../../types/user-profiles-types";
+import { ProfileCard } from "./ProfileCard";
+import { ProfileEditForm } from "./ProfileEditForm";
 
 export const ProfilePage = () => {
   const navigate = useNavigate();

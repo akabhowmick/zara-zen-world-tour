@@ -1,6 +1,5 @@
 import { Trophy, Target, TrendingUp, Calendar } from "lucide-react";
-import type { BookUser } from "../../../types/user-profiles-types";
-
+import { TIER_THRESHOLDS, TIERS, type BookUser } from "../../../types/user-profiles-types";
 
 interface ProfileCardProps {
   profile: BookUser;
@@ -85,18 +84,6 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ profile }) => {
               <p className="text-sm opacity-90">
                 {pointsToNextTier} points to {nextTier[0]}
               </p>
-              <div className="mt-2 h-2 bg-white/20 rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-white rounded-full transition-all duration-500"
-                  style={{
-                    width: `${
-                      ((profile.high_score - TIER_THRESHOLDS[profile.current_tier]) /
-                        (nextTier[1] - TIER_THRESHOLDS[profile.current_tier])) *
-                      100
-                    }%`,
-                  }}
-                />
-              </div>
             </div>
           )}
         </div>
