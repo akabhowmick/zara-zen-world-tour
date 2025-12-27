@@ -1,8 +1,8 @@
 import { Trophy, Award, TrendingUp, RotateCcw } from "lucide-react";
 import { useState, useEffect } from "react";
 import { gameTrackerService } from "../../services/gameTrackerService";
-import { LEVELS } from "../../types/game-tracker-types";
-import type { QuizScore } from "../../types/game-tracker-types";
+import { LEVELS } from "../types/game-tracker-types";
+
 
 export const StatsPage = () => {
   const [stats, setStats] = useState(gameTrackerService.getUserStats());
