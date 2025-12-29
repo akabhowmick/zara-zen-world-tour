@@ -1,10 +1,4 @@
-import {
-  POINT_THRESHOLDS,
-  type UserGameStats,
-  type QuizAttempt,
-  type LevelInfo,
-  LEVELS,
-} from "../types/game-tracker-types";
+import { POINT_THRESHOLDS, type UserGameStats, type QuizAttempt, type LevelInfo, LEVELS, } from "../types/game-tracker-types";
 
 /**
  * Calculate points earned based on percent correct

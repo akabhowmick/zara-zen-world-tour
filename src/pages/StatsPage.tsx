@@ -1,6 +1,6 @@
 import { Trophy, Award, TrendingUp, RotateCcw } from "lucide-react";
 import { useState, useEffect } from "react";
-import { gameTrackerService } from "../../services/gameTrackerService";
+import { gameTrackerService } from "../services/gameTrackerService";
 import { LEVELS } from "../types/game-tracker-types";
 
 
@@ -107,11 +107,8 @@ export const StatsPage = () => {
                   >
                     Lv {level.level}
                   </span>
-                  <span className="font-medium text-gray-700">{level.title}</span>
+                  <span className="font-medium text-gray-700">{level.name}</span>
                 </div>
-                <span className="text-sm text-gray-600">
-                  {level.minPoints} - {level.maxPoints === Infinity ? "∞" : level.maxPoints} pts
-                </span>
               </div>
             ))}
           </div>
