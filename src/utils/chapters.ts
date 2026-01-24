@@ -1,5 +1,5 @@
 import type { Chapter } from "../types/book-types";
-import chapterImage from "../assets/Character_Images/zara_main.png";
+import chapterImage from "../assets/Character_Images/CHARACTERS/000.png";
 import { japanChapter } from "./Chapters_Info/Asia_Volume_1/Chapter_01_Japan";
 
 import { chinaChapter } from "./Chapters_Info/Asia_Volume_1/Chapter_03_China";
