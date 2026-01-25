@@ -1,7 +1,7 @@
 import { Trophy, Target, Star } from "lucide-react";
 import { useEffect, useState } from "react";
-import { gameTrackerService } from "../../services/gameTrackerService";
-import type { UserGameStats } from "../../types/game-tracker-types";
+import { gameTrackerService } from "../../../services/gameTrackerService";
+import type { UserGameStats } from "../../../types/game-tracker-types";
 
 export const UserStatsDisplay = ({ compact = false }: { compact?: boolean }) => {
   const [stats, setStats] = useState<UserGameStats | null>(null);
@@ -52,7 +52,7 @@ export const UserStatsDisplay = ({ compact = false }: { compact?: boolean }) => 
       <div className="mb-4">
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm font-medium text-gray-700">
-            Level {stats.level} - {levelInfo.title}
+            Level {stats.level} - {levelInfo.name}
           </span>
           <span className="text-xs text-gray-500">{Math.round(levelProgress.progress)}%</span>
         </div>

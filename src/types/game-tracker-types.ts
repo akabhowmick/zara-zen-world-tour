@@ -11,6 +11,14 @@ export interface QuizAttempt {
   timeSpent?: number; // Optional: time in seconds
 }
 
+export type QuizScore = QuizBestScore & {
+  score?: number;
+  totalQuestions?: number;
+  percentCorrect?: number;
+  points?: number;
+  attempts?: number;
+};
+
 export interface QuizBestScore {
   quizId: string;
   country: string;

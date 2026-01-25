@@ -1,17 +1,20 @@
 import { Trophy, Award, TrendingUp, RotateCcw } from "lucide-react";
 import { useState, useEffect } from "react";
 import { gameTrackerService } from "../services/gameTrackerService";
+import type { UserGameStats, QuizScore } from "../types/game-tracker-types";
 import { LEVELS } from "../types/game-tracker-types";
 
-
 export const StatsPage = () => {
-  const [stats, setStats] = useState(gameTrackerService.getUserStats());
+  const [stats, setStats] = useState<UserGameStats>(gameTrackerService.getUserStats());
   const [showResetConfirm, setShowResetConfirm] = useState(false);
 
   useEffect(() => {
     const loadStats = () => setStats(gameTrackerService.getUserStats());
-    window.addEventListener("gameStatsUpdated", loadStats);
-    return () => window.removeEventListener("gameStatsUpdated", loadStats);
+    
+    if (typeof window !== "undefined") {
+      window.addEventListener("gameStatsUpdated", loadStats);
+      return () => window.removeEventListener("gameStatsUpdated", loadStats);
+    }
   }, []);
 
   const handleReset = () => {
@@ -23,8 +26,16 @@ export const StatsPage = () => {
   const levelInfo = gameTrackerService.getCurrentLevel();
   const levelProgress = gameTrackerService.getLevelProgress();
 
-  // Sort quizzes by points (highest first)
-  const sortedQuizzes = Object.values(stats.quizScores).sort((a, b) => b.points - a.points);
+  // Transform and sort quizzes
+  const sortedQuizzes: QuizScore[] = Object.values(stats.bestScores)
+    .map(quiz => ({
+      ...quiz,
+      score: quiz.bestScore,
+      percentCorrect: quiz.bestPercentCorrect,
+      points: quiz.bestPointsEarned,
+      attempts: quiz.timesPlayed,
+    } as QuizScore))
+    .sort((a, b) => (b.points ?? 0) - (a.points ?? 0));
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
@@ -46,7 +57,7 @@ export const StatsPage = () => {
             <span className="text-3xl font-bold">{stats.level}</span>
           </div>
           <p className="text-blue-100 font-medium">Current Level</p>
-          <p className="text-xs text-blue-50 mt-1">{levelInfo.title}</p>
+          <p className="text-xs text-blue-50 mt-1">{levelInfo.name}</p>
         </div>
 
         <div className="bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg shadow-lg p-6 text-white">
@@ -64,7 +75,7 @@ export const StatsPage = () => {
         <div className="mb-4">
           <div className="flex items-center justify-between mb-2">
             <span className="text-lg font-medium text-gray-700">
-              Level {stats.level} - {levelInfo.title}
+              Level {stats.level} - {levelInfo.name}
             </span>
             <span className="text-sm text-gray-500">{Math.round(levelProgress.progress)}%</span>
           </div>
@@ -126,29 +137,26 @@ export const StatsPage = () => {
           <div className="space-y-3">
             {sortedQuizzes.map((quiz: QuizScore) => (
               <div
-                key={`${quiz.countryId}-${quiz.quizSetId}`}
+                key={`${quiz.quizId}`}
                 className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow"
               >
                 <div className="flex items-start justify-between">
                   <div>
                     <h3 className="font-semibold text-lg text-gray-800 capitalize">
-                      {quiz.countryId}
-                      {quiz.quizSetId > 1 && (
-                        <span className="text-sm text-gray-500 ml-2">(Set {quiz.quizSetId})</span>
-                      )}
+                      {quiz.country}
                     </h3>
                     <div className="flex items-center gap-4 mt-2 text-sm text-gray-600">
                       <span>
-                        Score: {quiz.score}/{quiz.totalQuestions}
+                        Score: {quiz.score}/{quiz.totalQuestions ?? 10}
                       </span>
-                      <span>Accuracy: {quiz.percentCorrect.toFixed(1)}%</span>
-                      <span>Attempts: {quiz.attempts}</span>
+                      <span>Accuracy: {(quiz.percentCorrect ?? 0).toFixed(1)}%</span>
+                      <span>Attempts: {quiz.attempts ?? quiz.timesPlayed}</span>
                     </div>
                   </div>
                   <div className="text-right">
                     <div className="flex items-center gap-1 text-yellow-600 font-bold text-xl">
                       <Trophy className="h-5 w-5" />
-                      <span>{quiz.points}</span>
+                      <span>{quiz.points ?? 0}</span>
                     </div>
                     <span className="text-xs text-gray-500">points</span>
                   </div>
@@ -157,13 +165,13 @@ export const StatsPage = () => {
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
                       className={`h-2 rounded-full ${
-                        quiz.percentCorrect >= 90
+                        (quiz.percentCorrect ?? 0) >= 90
                           ? "bg-green-500"
-                          : quiz.percentCorrect >= 70
+                          : (quiz.percentCorrect ?? 0) >= 70
                           ? "bg-blue-500"
                           : "bg-orange-500"
                       }`}
-                      style={{ width: `${quiz.percentCorrect}%` }}
+                      style={{ width: `${quiz.percentCorrect ?? 0}%` }}
                     />
                   </div>
                 </div>
