@@ -2,7 +2,8 @@ import type { Character } from "../types/book-types";
 import ZenImage from "../assets/Character_Images/CHARACTERS/000.png";
 import ZaraImage from "../assets/Character_Images/CHARACTERS/00.png";
 import HaruImage from "../assets/Character_Images/CHARACTERS/1.01.png";
-import PixieImage from "../assets/Character_Images/CHARACTERS/1.02.png";
+import ShinaImage from "../assets/Character_Images/CHARACTERS/1.02.png";
+import PixieImage from "../assets/Character_Images/CHARACTERS/1.03.png";
 import DrKimImage from "../assets/Character_Images/CHARACTERS/2.01.png";
 import AkashiImage from "../assets/Character_Images/CHARACTERS/2.02.png";
 import ShifuImage from "../assets/Character_Images/CHARACTERS/3.01.png";
@@ -51,9 +52,16 @@ export const bookCharacters: Character[] = [
     image: HaruImage,
     traits: ["Wise", "Welcoming", "Calm", "Gentle", "Warm-hearted"],
   },
-
   {
     id: 4,
+    name: "Shina",
+    description:
+      "A cheerful penguin traveler with a cream-beige checkered sweater, fluffy earmuffs, and a camera always around her neck. She’s curious, warm, slightly clumsy, and constantly searching for beauty through her lens.",
+    image: ShinaImage,
+    traits: ["Curious", "Warm", "Cheerful", "Observant", "Adventurous"],
+  },
+  {
+    id: 5,
     name: "Pixie",
     description:
       "A cheerful penguin traveler with a cream-beige checkered sweater, fluffy earmuffs, and a camera always around her neck. She’s curious, warm, slightly clumsy, and constantly searching for beauty through her lens.",
@@ -61,7 +69,7 @@ export const bookCharacters: Character[] = [
     traits: ["Curious", "Warm", "Cheerful", "Observant", "Adventurous"],
   },
   {
-    id: 5,
+    id: 6,
     name: "Dr. Kim",
     description:
       "A calm and nurturing black-and-white cat doctor with yellow eyes and a gentle smile. She wears a rosewood-pink hanbok under a white lab coat. Dr. Kim represents healing, empathy, and the art of slowing down to care for oneself.",
@@ -69,7 +77,7 @@ export const bookCharacters: Character[] = [
     traits: ["Empathetic", "Calm", "Observant", "Nurturing", "Precise"],
   },
   {
-    id: 6,
+    id: 7,
     name: "Akashi",
     description:
       "A friendly otter with a soft, expressive face and warm energy. As Dr. Kim’s trusted companion, Akashi brings levity and kindness, supporting others with patience and quiet optimism.",
@@ -77,7 +85,7 @@ export const bookCharacters: Character[] = [
     traits: ["Gentle", "Supportive", "Optimistic", "Warm", "Reliable"],
   },
   {
-    id: 7,
+    id: 8,
     name: "Shifu",
     description:
       "A wise, patient red panda master chef with glasses and a towel over his shoulder. Shifu embodies tradition, community, and the love passed down through shared craft.",
@@ -85,7 +93,7 @@ export const bookCharacters: Character[] = [
     traits: ["Wise", "Patient", "Skilled", "Warm", "Community-focused"],
   },
   {
-    id: 8,
+    id: 9,
     name: "Shao",
     description:
       "A bright and eager young red panda apprentice with an enthusiastic smile. Shao is curious, hardworking, and full of youthful excitement as he learns the family craft.",
@@ -93,7 +101,7 @@ export const bookCharacters: Character[] = [
     traits: ["Curious", "Energetic", "Hardworking", "Cheerful", "Eager"],
   },
   {
-    id: 9,
+    id: 10,
     name: "Kriti",
     description:
       "A gentle and confident young elephant artisan who paints traditional umbrellas. She wears a jasmine flower behind her ear and expresses beauty, joy, and meaning through every brushstroke.",
@@ -101,7 +109,7 @@ export const bookCharacters: Character[] = [
     traits: ["Creative", "Gentle", "Focused", "Warm", "Artistic"],
   },
   {
-    id: 10,
+    id: 11,
     name: "Benji",
     description:
       "A lively beaver traveler with a green universe full of curiosity. Benji is upbeat, expressive, and always ready to learn something new as he prepares for the journey ahead.",
@@ -109,7 +117,7 @@ export const bookCharacters: Character[] = [
     traits: ["Energetic", "Friendly", "Curious", "Inventive", "Bright"],
   },
   {
-    id: 11,
+    id: 12,
     name: "Amina",
     description:
       "A disciplined and calm lion pilot with sleek golden fur and olive-green eyes. Amina represents confidence, precision, and the steady strength of responsibility in the skies.",
@@ -117,7 +125,7 @@ export const bookCharacters: Character[] = [
     traits: ["Confident", "Disciplined", "Calm", "Dependable", "Focused"],
   },
   {
-    id: 12,
+    id: 13,
     name: "Naina",
     description:
       "A warm and imaginative lion architect dedicated to sustainable design. With her tawny-golden fur and thoughtful demeanor, she balances vision, empathy, and creativity.",
@@ -125,7 +133,7 @@ export const bookCharacters: Character[] = [
     traits: ["Creative", "Thoughtful", "Empathetic", "Visionary", "Kind"],
   },
   {
-    id: 13,
+    id: 14,
     name: "Puji",
     description:
       "A spirited Indian woodpecker with bright eyes and a determined heart. Puji represents enthusiasm, curiosity, and the joy of guiding others while on her own journey.",
@@ -133,7 +141,7 @@ export const bookCharacters: Character[] = [
     traits: ["Enthusiastic", "Curious", "Lively", "Helpful", "Friendly"],
   },
   {
-    id: 14,
+    id: 15,
     name: "Roy",
     description:
       "A regal peacock cricket coach with teal, emerald, and gold feathers. Calm, articulate, and confident, Coach Roy leads with wisdom and empathy, inspiring pride through discipline.",
@@ -141,7 +149,7 @@ export const bookCharacters: Character[] = [
     traits: ["Confident", "Wise", "Articulate", "Encouraging", "Graceful"],
   },
   {
-    id: 15,
+    id: 16,
     name: "Demir",
     description:
       "A warm and expressive young horse artisan who weaves textiles with deep respect for tradition. Demir represents continuity, creativity, and the love carried into handmade craft.",
@@ -149,7 +157,7 @@ export const bookCharacters: Character[] = [
     traits: ["Creative", "Humble", "Warm", "Focused", "Artistic"],
   },
   {
-    id: 16,
+    id: 17,
     name: "Vince",
     description:
       "A cheerful polar bear cub traveler with warm olive-green eyes and a black vest. Vince is calm, curious, and steady — a budding food photographer who loves capturing flavor and joy.",
@@ -157,7 +165,7 @@ export const bookCharacters: Character[] = [
     traits: ["Calm", "Curious", "Friendly", "Thoughtful", "Artistic"],
   },
   {
-    id: 17,
+    id: 18,
     name: "Thea",
     description:
       "A bright and expressive dolphin performer in a flowy lime-green dress and flower crown. Thea radiates joy, rhythm, and freedom through music and dance.",
@@ -165,7 +173,7 @@ export const bookCharacters: Character[] = [
     traits: ["Joyful", "Expressive", "Playful", "Graceful", "Energetic"],
   },
   {
-    id: 18,
+    id: 19,
     name: "Luna",
     description:
       "A sociable fox artist who fills her treehouse room with color. Luna’s warm, creative spirit shines through her hands-on watercolor work and her expressive approach to the world.",
@@ -173,7 +181,7 @@ export const bookCharacters: Character[] = [
     traits: ["Creative", "Sociable", "Expressive", "Warm", "Imaginative"],
   },
   {
-    id: 19,
+    id: 20,
     name: "Alessandro",
     description:
       "A confident and innovative cheetah fashion designer in a maroon blazer. Alessandro blends tradition with bold modern ideas, always refining his craft with precision and flair.",
@@ -181,7 +189,7 @@ export const bookCharacters: Character[] = [
     traits: ["Creative", "Stylish", "Confident", "Innovative", "Focused"],
   },
   {
-    id: 20,
+    id: 21,
     name: "Leonardo",
     description:
       "A dynamic cheetah designer in an olive blazer, full of energy and vision. Leonardo pushes boundaries with youthful brilliance and a deep respect for heritage.",
@@ -189,7 +197,7 @@ export const bookCharacters: Character[] = [
     traits: ["Energetic", "Creative", "Bold", "Visionary", "Artistic"],
   },
   {
-    id: 21,
+    id: 22,
     name: "Freya",
     description:
       "A confident squirrel journalist with honey-gold eyes and a soft analytical presence. Freya blends intellect with empathy, always seeking truth through connection.",
@@ -197,7 +205,7 @@ export const bookCharacters: Character[] = [
     traits: ["Analytical", "Empathetic", "Confident", "Curious", "Articulate"],
   },
   {
-    id: 22,
+    id: 23,
     name: "Elise",
     description:
       "A sharp and expressive rabbit private investigator with powder-blue eyes and a black trench coat. Elise is intelligent, perceptive, and warm — uncovering truth with heart and precision.",
@@ -205,7 +213,7 @@ export const bookCharacters: Character[] = [
     traits: ["Intelligent", "Perceptive", "Expressive", "Calm", "Observant"],
   },
   {
-    id: 23,
+    id: 24,
     name: "Claire",
     description:
       "A joyful pâtissière hedgehog with bright blue eyes and a radiant smile. Claire wears a French-red chef’s dress and brings grace, laughter, and sweetness to every creation.",
@@ -213,7 +221,7 @@ export const bookCharacters: Character[] = [
     traits: ["Joyful", "Graceful", "Warm", "Creative", "Kind"],
   },
   {
-    id: 24,
+    id: 25,
     name: "Claude",
     description:
       "A warm, expressive hedgehog baker with golden-brown fur and a bright red chef jacket. Claude radiates humor, hospitality, and the joy of sharing food with others.",
@@ -221,7 +229,7 @@ export const bookCharacters: Character[] = [
     traits: ["Warm", "Expressive", "Skilled", "Friendly", "Joyful"],
   },
   {
-    id: 25,
+    id: 26,
     name: "Marta",
     description:
       "A strong and grounded bull farmer with sun-kissed skin, an orange neckerchief, and olive-green overalls. Marta embodies patience, fulfillment, and the quiet pride of hard work.",
@@ -229,7 +237,7 @@ export const bookCharacters: Character[] = [
     traits: ["Strong", "Grounded", "Nurturing", "Patient", "Dedicated"],
   },
   {
-    id: 26,
+    id: 27,
     name: "Mateo",
     description:
       "A gentle red deer beekeeper with warm honey-cream accents and a soft smile. Mateo represents harmony, care, and the simple joy of tending to living things.",
